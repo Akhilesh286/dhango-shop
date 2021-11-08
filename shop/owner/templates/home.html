@@ -1,0 +1,18 @@
+{# extends 'main.html' #}
+    {%  block head %}
+    <title>hello</title>
+    {% endblock %}
+  {% block body %}
+    <h1>hello</h1>
+    <h1>hai </h1>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4pd-YZx4-hboAHx8a8vKSFJfiIHvyxp2njA&usqp=CAU" class="img-fluid" alt="...">
+    <form action="" method="get" accept-charset="utf-8">
+      <input type="text" name="name" id="name" value="" />
+      <input type="submit" name="submit" id="submit" value="submit" />
+    </form>
+   <h1>{{text}}</h1>
+   <h1>{{hello}}</h1>
+   {% for product in products %}
+   <h1>product</h1>
+   {% endfor %}
+  {% endblock %}

@@ -3,15 +3,22 @@
 <title>hello</title>
 {% endblock %}
 {% block body %}
-<h1>hello</h1>
+<style type="" media="">
+
+.h {
+  color:{{colour}};
+}
+</style>
+<h1 class="h">hello</h1>
 <h1>hai </h1>
 <img src="{{image}}" class="img-fluid" alt="...">
 <form action="" method="get" accept-charset="utf-8">
 <input type="text" name="name" id="name" value="" />
 <input type="submit" name="submit" id="submit" value="submit" />
-<button type="submit" name="c"  value="c">button</button>
+<button type="submit" name="button"  >button</button>
+<input type="color" name="colour" id="colour" value="" />
 </form>
-<h1>{{h}}</h1>
+<h1>{{button}}</h1>
 <h1>{{text}}</h1>
 <h1>{{hello}}</h1>
 {% for product in products %}

@@ -9,7 +9,7 @@ def index (request):
   data = home.login(request,owners)
   url = home.home (request)
   if url == True:
-    return render (request,'home.html')
+    return render (request,'home.html',data)
     url = home.home (request)
     
     

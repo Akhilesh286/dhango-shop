@@ -1,6 +1,6 @@
 from owner.models import owners , Product
 
-def login (request,products) :
+def login (request,owners) :
   req = request.GET
   
   #-----------colour--------------#
@@ -21,7 +21,8 @@ def login (request,products) :
   #colour--------------
   
   data = {
-   'colour' :colour,'c':c,'tcolour':tcolour
+   'colour' :colour,'c':c,'tcolour':tcolour,
+   'owners':owners,
     }
   
     

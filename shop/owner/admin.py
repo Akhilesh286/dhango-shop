@@ -1,7 +1,7 @@
 from django.contrib import admin
 from .models import Product ,owners
 class ownersAdmin (admin.ModelAdmin):
-  list_display = ('name','password','items')
+  list_display = ('name','password','email')
 class ProductAdmin (admin.ModelAdmin):
   list_display = ('name','price','stock','image')
 

@@ -4,13 +4,14 @@ from .models import owners , Product
 from action import home , link
 # Create your views here.
 def index (request):
-  global url
+  
   products = Product.objects.all()
-  data = home.login(request,products)
+  data = home.login(request,owners)
   url = home.home (request)
   if url == True:
-    return HttpResponse ("<h1>hello </h1>")
+    return render (request,'home.html')
+    url = home.home (request)
     
     
-  return render (request,'home.html',data)
+  return render (request,'login.html',data)
 

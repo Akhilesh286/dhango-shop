@@ -1,3 +1,5 @@
+from owner.models import owners , Product
+
 def login (request,products) :
   req = request.GET
   
@@ -34,7 +36,9 @@ def home (request):
   req = request.GET
   name = req.get ('name')
   password = req.get ('password')
-  print (name,password)
+  email = req.get ('email')
+  list1 = owners(name=str(name),password=str(password),email=str(email))
+  list1.save()
   url = False
   if name == "a" and password == 'a':
     url = True

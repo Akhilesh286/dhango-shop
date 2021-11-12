@@ -1,15 +1,17 @@
 from django.shortcuts import render , redirect
 from django.http import HttpResponse
 from .models import owners , Product
-from action import home , link
+from action import home , link , search
 # Create your views here.
 def index (request):
   owner=owners.objects.all()
   products = Product.objects.all()
-  data = home.login(request,owner)
-  url = home.db (request)
-  print (url)
-   
+  data = home.color(request)
+  
+    
+  search = home.search (request,owner)
+  if search == True :
+    return HttpResponse ('hello')
     
     
   return render (request,'login.html',data)
@@ -26,4 +28,10 @@ def admin (request):
     'owners':owner
   }
   return render (request,'admin.html',data)
+  
+  
+def create (request):
+  data = home.color (request)
+  db = home.db (request)
+  return render (request,'create.html', data)
   

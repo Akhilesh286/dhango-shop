@@ -1,6 +1,6 @@
 from owner.models import owners , Product
 
-def login (request,owners) :
+def color (request) :
   req = request.GET
   
   #-----------colour--------------#
@@ -38,4 +38,19 @@ def db (request ):
       )
     new_db.save()
 
-
+def search (request, owner):
+  url = False  
+  if request.method == "POST":
+    print (request.POST)
+    name = request.POST['u_name']
+    password = request.POST ['Password']
+    for i in owner :
+      Name = i.name
+      Password = i.password
+      
+      if name == Name and password == Password:
+        url = True
+        break
+      
+  return url  
+    

@@ -22,28 +22,20 @@ def login (request,owners) :
   
   data = {
    'colour' :colour,'c':c,'tcolour':tcolour,
-   'owners':owners,
+  
     }
   
     
   return data
  
-def urls (url):
-  print (url)
   
-def home (request):
-  
-  
-  req = request.GET
-  name = req.get ('name')
-  password = req.get ('password')
-  email = req.get ('email')
-  list1 = owners(name=str(name),password=str(password),email=str(email))
-  list1.save()
-  url = False
-  if name == "a" and password == 'a':
-    url = True
-    urls (url)
-  return url
+def db (request ):
+  if request.method == "POST":
+    new_db = owners (
+      name = request.POST['Name'],
+      email = request.POST['email'], 
+      password = request.POST['password'],
+      )
+    new_db.save()
 
 

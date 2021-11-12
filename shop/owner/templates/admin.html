@@ -6,13 +6,6 @@
     <title></title>
   </head>
   <body>
-    <form action="" method="post" accept-charset="utf-8">
-          {% csrf_token %}
-     <input type="text" name="Name" id="" value="" />
-     <input type="Password" name="password" id="password" value="" />
-     <input type="email" name="email" id="email" value="" />
-     <input type="submit" name="submit" id="submit" value="submit" />
-    </form>
 
 <ul id="myUL">
   {% for owner in owners reversed %}

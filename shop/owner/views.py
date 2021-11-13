@@ -9,7 +9,7 @@ def index (request):
   data = home.color(request)
   search = home.search (request,owner)
   if search == True :
-    return redirect ('http://127.0.0.1:8000/b/')
+    return redirect ('http://127.0.0.1:8000/b/True')
   
     
  
@@ -38,10 +38,10 @@ def create (request):
     return redirect ('/')
   return render (request,'create.html', data)
 
-def homep (request):
-  s = search
+def homep (request,pk):
+  s = pk
   print ('hh')
-  if s == True:
+  if s =='True':
     return HttpResponse ('hello')
   else :
     return HttpResponse ('hh')

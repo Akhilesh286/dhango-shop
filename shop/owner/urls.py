@@ -8,7 +8,7 @@ urlpatterns = [
     
     path ('delete/<str:pk>',views.delete,name="delete"),
     path ('c/',views.create),
-    path ('b/',views.homep )
+    path ('b/<str:pk>',views.homep )
     
     
 ]

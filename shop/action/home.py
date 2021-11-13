@@ -30,6 +30,7 @@ def color (request) :
  
   
 def db (request ):
+  datab = False
   if request.method == "POST":
     new_db = owners (
       name = request.POST['Name'],
@@ -37,6 +38,8 @@ def db (request ):
       password = request.POST['password'],
       )
     new_db.save()
+    datab = True
+  return datab
 
 def search (request, owner):
   url = False  

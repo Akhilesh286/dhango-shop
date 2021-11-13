@@ -33,5 +33,8 @@ def admin (request):
 def create (request):
   data = home.color (request)
   db = home.db (request)
+  print (db)
+  if db == True:
+    return redirect ('/')
   return render (request,'create.html', data)
   

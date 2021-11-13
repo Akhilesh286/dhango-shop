@@ -4,17 +4,17 @@ from .models import owners , Product
 from action import home , link , search
 # Create your views here.
 def index (request):
-  owner=owners.objects.all()
-  products = Product.objects.all()
-  data = home.color(request)
   
-    
+  owner=owners.objects.all()
+  data = home.color(request)
   search = home.search (request,owner)
   if search == True :
-    return HttpResponse ('hello')
+    return redirect ('http://127.0.0.1:8000/b/')
+  
     
-    
-  return render (request,'login.html',data)
+ 
+ 
+  return render (request ,'login.html',data)
 
 def delete (request,pk):
   owner = owners.objects.get (id=pk)
@@ -37,4 +37,12 @@ def create (request):
   if db == True:
     return redirect ('/')
   return render (request,'create.html', data)
-  
+
+def homep (request):
+  s = search
+  print ('hh')
+  if s == True:
+    return HttpResponse ('hello')
+  else :
+    return HttpResponse ('hh')
+  return HttpResponse ('home')

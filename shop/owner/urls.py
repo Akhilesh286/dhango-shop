@@ -4,9 +4,11 @@ from . import views
 urlpatterns = [
     path('',views.index ,name = 'index' ),
     path('a/',views.admin ,name = 'admin' ),
-    path ('delete/<str:pk>',views.delete,name="delete"),
-    path ('c/',views.create)
     
+    
+    path ('delete/<str:pk>',views.delete,name="delete"),
+    path ('c/',views.create),
+    path ('b/',views.homep )
     
     
 ]

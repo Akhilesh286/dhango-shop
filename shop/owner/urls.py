@@ -8,7 +8,8 @@ urlpatterns = [
     
     path ('delete/<str:pk>',views.delete,name="delete"),
     path ('c/',views.create),
-    path ('b/<str:pk>',views.homep )
+    #dynamic url
+    path ('b/<str:search>/<str:name>/',views.homep )
     
     
 ]

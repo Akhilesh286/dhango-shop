@@ -23,4 +23,15 @@
   </div>
 
 </section>
+{% for owne in j %}
+<h1>{{owne}}</h1>
+{% if owne == name %}
+<h1>hello</h1>
+{% endif %}
+{% endfor %}
+<h1>{{name}}</h1>
+
+<h1>{{oname}}</h1>
+<h1>{{opassword}}</h1>
+<h1>{{oemail}}</h1>
 {% endblock %}

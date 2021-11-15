@@ -1,6 +1,6 @@
 from django.shortcuts import render , redirect
 from django.http import HttpResponse
-from .models import owners , Product
+from .models import owners 
 from action import home , link , search
 # Create your views here.
 def index (request):
@@ -8,8 +8,9 @@ def index (request):
   owner=owners.objects.all()
   data = home.color(request)
   search = home.search (request,owner)
+  u_name = home.u_name(request)
   if search == True :
-    return redirect ('http://127.0.0.1:8000/b/True')
+    return redirect (f'http://127.0.0.1:8000/b/True/{u_name}/')
   
     
  
@@ -38,11 +39,6 @@ def create (request):
     return redirect ('/')
   return render (request,'create.html', data)
 
-def homep (request,pk):
-  s = pk
-  print ('hh')
-  if s =='True':
-    return HttpResponse ('hello')
-  else :
-    return HttpResponse ('hh')
-  return HttpResponse ('home')
+def homep (request,search,name):
+  data = home.color(request)
+  return render (request,'home.html',data)

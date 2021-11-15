@@ -1,0 +1,60 @@
+for i in owner :
+    j = i.name
+    if j == 'Akhil':
+      id2 = i.id
+      id1 = owners.objects.get(id=id2)
+      id5 = id1.email
+      print (id5)
+      
+    list1.append(j)
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+     name = name 
+  list1 = []
+  namelist = []
+  passwordlist = []
+  emaillist = []
+  owner = owners.objects.all()
+  #print (name)
+  for i in owner :
+    j = i.name
+    if j == 'Akhil':
+      id2 = i.id
+      id1 = owners.objects.get(id=id2)
+      idname = id1.name
+      idpassword = id1.password
+      idemail = id1.email
+      namelist.append (idname)
+      emaillist.append(idemail)
+      passwordlist.append (idpassword)
+    list1.append(j)
+  for owen in list1:
+    if owen == name :
+      #print ('AAA')
+      g =owners.objects.get(name = 'hh')
+    
+      o = owners.objects.get(name='hh')
+     
+    else :
+      print ('kk')
+  data = {
+    'j':list1,
+    'name':name,
+    'oname':namelist,
+    'opassword':passwordlist,
+    'oemail':emaillist,
+    
+}
+  return render (request,'home.html',data)
+

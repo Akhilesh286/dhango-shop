@@ -1,4 +1,4 @@
-from owner.models import owners , Product
+from owner.models import owners
 
 def search (owners):
   for owner in owners :

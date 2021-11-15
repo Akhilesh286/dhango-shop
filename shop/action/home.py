@@ -1,4 +1,4 @@
-from owner.models import owners , Product
+from owner.models import owners
 
 def color (request) :
   req = request.GET
@@ -55,5 +55,10 @@ def search (request, owner):
         url = True
         break
       
-  return url  
+  return url
     
+def u_name (request):
+  if request.method == "POST":
+    print (request.POST)
+    name = request.POST['u_name']
+    return name

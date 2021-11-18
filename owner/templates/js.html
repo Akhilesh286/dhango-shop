@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+
+   <head>
+      <title>JavaScript Internal Script</title>
+      <base href = "https://www.tutorialspoint.com/" />
+      
+      <script type = "text/JavaScript">
+         function Hello() {
+           let text = document.getElementById('inp')
+            alert(text);
+         }
+      </script>
+      <link href="{% static "style.css" %}" rel="stylesheet" type="text/css"/>
+
+   </head>
+
+   <body>
+      <input type = "button" onclick = "Hello();" name = "ok" value = "Click Me" id="a" />
+      <input type="text" name="inp" id="inp" value="" />
+   </body>
+
+</html>

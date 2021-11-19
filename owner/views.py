@@ -47,7 +47,10 @@ def homep (request,search,name):
   return render (request,'home.html',data)
 # Create your views here.
 def js (request):
-  return render (request,'js.html')
+  return render (request,'js.html',
+  {
+    'co':'#f83636'
+  })
   
  
 

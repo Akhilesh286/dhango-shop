@@ -1,0 +1,76 @@
+{% extends 'main.html' %}
+{%  block head %}
+<title>{{oname}}</title>
+{% endblock %}
+{% block body %}
+<h1>{{oname}}</h1>
+
+<div>
+  <form action="" method="post" accept-charset="utf-8">
+    
+       {% csrf_token %}
+  <div class="input-group mb-3 inp">
+  <span class="input-group-text" id="inputGroup-sizing-default">product Name</span>
+  <input type="text" class="form-control" aria-label="Sizing example input" name="name" aria-describedby="inputGroup-sizing-default">
+</div>
+<div class="input-group mb-3 inp1">
+  <span class="input-group-text">$</span>
+  <input type="text" class=" form-control" name="price" aria-label="Amount (to the nearest dollar)">
+  <span class="input-group-text">.00</span>
+</div>
+<div class="input-group mb-3 inp1">
+  <span class="input-group-text" id="basic-addon1">Stock</span>
+  <input type="text" name="stock" class="form-control" placeholder="Stock" aria-label="Username" aria-describedby="basic-addon1">
+</div>
+<div class="input-group mb-3 inp1">
+  <span class="input-group-text" id="basic-addon1">discount</span>
+  <input type="text" name="discount" class="form-control" placeholder="discount" aria-label="Username" aria-describedby="basic-addon1">
+</div>
+
+<div class="input-group mb-3 inp2">
+  <span class="input-group-text" id="basic-addon1">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
+  <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"/>
+</svg>
+  </span>
+  <input type="text" class="form-control" name="star" placeholder="Star" aria-label="Username" aria-describedby="basic-addon1">
+</div>
+<div class="input-group mt-3 inp flex-nowrap">
+  <span class="input-group-text" id="addon-wrapping">logo</span>
+  <input type="text" name="logo" class="form-control" placeholder="logo image" aria-label="Username" aria-describedby="addon-wrapping">
+</div>
+<div class="input-group mt-3 inp flex-nowrap">
+  <span class="input-group-text" id="addon-wrapping">image</span>
+  <input type="text" name="image2" class="form-control" placeholder="image 1" aria-label="Username" aria-describedby="addon-wrapping">
+</div>
+<div class="input-group mt-3 inp flex-nowrap">
+  <span class="input-group-text" id="addon-wrapping">image</span>
+  <input type="text" class="form-control" name="image3" placeholder="image 2" aria-label="Username" aria-describedby="addon-wrapping">
+</div>
+<div class="input-group mt-3 inp flex-nowrap">
+  <span class="input-group-text" id="addon-wrapping">image</span>
+  <input type="text" name="image4" class="form-control" placeholder="image 3" aria-label="Username" aria-describedby="addon-wrapping">
+</div>
+<div class="input-group mt-3 inp flex-nowrap">
+  <span class="input-group-text" id="addon-wrapping">image</span>
+  <input type="text" name="image5" class="form-control" placeholder="image 4" aria-label="Username" aria-describedby="addon-wrapping">
+</div>
+<div class="input-group mt-3 inp flex-nowrap">
+  <span class="input-group-text" id="addon-wrapping">video</span>
+  <input type="text" name="video" class="form-control" placeholder="video" aria-label="Username" aria-describedby="addon-wrapping">
+  
+</div>
+
+
+<div class="input-group mt-3 inp3 input-group-lg">
+  <input type="text" class="form-control" aria-label="Sizing example input" name="discription" placeholder="discription" aria-describedby="inputGroup-sizing-lg">
+</div>
+<div class="mt-5">
+<button type="submit" class="but1 btn btn-outline-info">Submit</button>
+</div>
+</form>
+
+</div>
+<h1>{{name}}</h1>
+{% endblock %}

@@ -1,4 +1,4 @@
-from owner.models import owners
+from owner.models import owners , products
 
 def color (request) :
   req = request.GET
@@ -96,9 +96,10 @@ def u_name (request):
     print (request.POST)
     name = request.POST['u_name']
     return name
-def homep (request):
+def homep (request,name):
   req = request.GET
   owner = owners.objects.all()
+  product = products.objects.all()
   #-----------colour--------------#
  
   c = 'light'
@@ -113,9 +114,43 @@ def homep (request):
     colour ="rgb(235,240,241)"
     tcolour = "#000000"
     c= 'dark'
+  for i in product:
+    if i.owner_name == name:
+      print ('hhhhh')
   data = {
-   'colour' :colour,'c':c,'tcolour':tcolour,'j':owner
+   'colour' :colour,'c':c,'tcolour':tcolour,'j':owner,'oname':name
+  ,'ourl':f'/add/{name}',
   
     }
   return data
   #-----------end colou
+
+
+def add (request,o_name):
+  print (request)
+  data = {'oname':o_name}
+  if request.method == "POST":
+    print ('hello')
+    new_db = products (
+      name = request.POST['name'],
+      price = request.POST['price'],
+      image = request.POST['logo'],
+      image2 = request.POST['image2'],
+      image3 = request.POST['image3'],
+      image4 = request.POST['image4'],
+      image5 = request.POST['image5'],
+      stock = request.POST['stock'],
+      video = request.POST['video'],
+      star = request.POST['star'],
+      discription = request.POST['discription'],
+      discount = request.POST['discount'],
+      owner_name = o_name
+    )
+    new_db.save()
+    
+    data = {
+    'name':name ,
+    'oname':o_name,
+    'price':price
+    }  
+  return data

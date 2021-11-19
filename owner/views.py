@@ -43,8 +43,14 @@ def create (request):
   return render (request,'create.html', data)
 
 def homep (request,search,name):
-  data = home.homep(request)
+  data = home.homep(request,name)
   return render (request,'home.html',data)
 # Create your views here.
 def js (request):
   return render (request,'js.html')
+  
+ 
+
+def add (request,o_name):
+  data = home.add(request,o_name)
+  return render (request,'add.html',data)

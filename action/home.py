@@ -118,8 +118,9 @@ def homep (request,name):
     if i.owner_name == name:
       print ('hhhhh')
   data = {
-   'colour' :colour,'c':c,'tcolour':tcolour,'j':owner,'oname':name
+   'colour' :colour,'c':c,'tcolour':tcolour,'oname':name
   ,'ourl':f'/add/{name}',
+  'products':product
   
     }
   return data

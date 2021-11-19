@@ -23,17 +23,9 @@
   </div>
 
 </section>
-<!--
-{% for owne in j %}
-<h1>{{owne}}</h1>
-{% if owne == name %}
-<h1>hello</h1>
-{% endif %}
-{% endfor %}
-<h1>{{name}}</h1>
--->
+<h1>add New products</h1>
 <div class="">
- <button type="button" class="btn btn-outline-primary but2"><a href="{{ourl}}">Add products </a>
+ <button type="button" class="btn btn-outline-primary but2"><a href="{{ourl}}" style="text-decoration: none;">Add products </a>
  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
   <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"/>
 </svg>
@@ -42,27 +34,32 @@
 </div>
 <div class="table2">
   
-
+<h1>products</h1>
 <table class="table">
   <thead class="thead-dark head1">
     <tr>
       <th scope="col">#</th>
       <th scope="col">name</th>
-      <th scope="col">password</th>
-      <th scope="col">email</th>
+      <th scope="col">price</th>
+      <th scope="col">stock</th>
+      <th scope="col">discount</th>
+      <th scope="col">star</th>
+      
       <th scope="col">delete</th>
       <th scope="col"> Update</th>
     </tr>
   </thead>
-        {% for owne in j %}
+        {% for product in products %}
   <tbody class="body1">
     <tr>
 
-      <th scope="row">{{owne.id}}</th>
-      <td>{{owne.name}}</td>
-      <td>{{owne.password}}</td>
+      <th scope="row">{{product.id}}</th>
+      <td>{{product.name}}</td>
+      <td>{{product.price}}</td>
        
-       <td>{{owne.email}}</td>
+       <td>{{product.stock}}</td>
+       <td>{{product.discount}}</td>
+       <td>{{product.star}}</td>
        <td class="td1">
              <span class="a1 close button"><a style="text-decoration: none; color: black;" href="">delete</a></span></li>
   </td>
@@ -73,10 +70,56 @@
     </tr>
 
   </tbody>
+ 
         {% endfor %}
 </table>
+<h1>images and discription</h1>
+<div>
+  <table class="table" border="0">
+    
+    
+     <thead class="mt-5 thead-dark head1">
+       <tr>
+      <th scope="col">#</th>
+      <th scope="col">name</th>
+      <th scope="col">video</th>
+      <th scope="col">logo</th>
+      <th scope="col">discription</th>
+      <th scope="col">image1</th>
+         <th scope="col">image2</th>
+         <th scope="col">image3</th>
+         <th scope="col">image4</th>
+      
+      <th scope="col">delete</th>
+      <th scope="col"> Update</th>
+    </tr> 
+  </thead>
+  {% for product in products %}
+  
+  <tbody class="body1">
+      <tr>
+
+      <th scope="row">{{product.id}}</th>
+      <td>{{product.name}}</td>
+      <td>{{product.video}}</td>
+       
+       <td>{{product.image}}</td>
+       <td>{{product.discription}}</td>
+       <td>{{product.image2}}</td>
+       <td>{{product.image3}}</td>
+       <td>{{product.image4}}</td>
+       <td>{{product.image5}}</td>
+       <td class="td1">
+             <span class="a1 close button"><a style="text-decoration: none; color: black;" href="">delete</a></span></li>
+  </td>
+  <td>
+             <span class="a1 close button"><a style="text-decoration: none; color: black;" href="">Update</a></span></li>
+      </td>
+       </td>
+    </tr>  
+  </tbody>
+  {% endfor %}
+  </table>
 </div>
-<h1>{{oname}}</h1>
-<h1>{{opassword}}</h1>
-<h1>{{oemail}}</h1>
+</div>
 {% endblock %}

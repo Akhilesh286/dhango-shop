@@ -1,17 +1,17 @@
 function Error1 (){
   name = document.getElementById('name').value
+ if (name == "" ){
+    alert ('name is null')}
   password = document.getElementById('password').value
+if (password == "") {
+      alert ('password is null')}
   email = document.getElementById('email').value;
-  if (name == "" && password == "" && email == ""){
-    let person = prompt("Please enter your name", "Harry Potter");
-let text;
-if (person == null || person == "") {
-  text = "User cancelled the prompt.";
-} else {
-  text = "Hello " + person + "! How are you today?";
+  if ( email == ""){
+    alert ("enail is null ")}
 }
-  }
-  else {
-    alert('go')
-  }
+function name_check() {
+  nameCheck = document.getElementById('nCheck').value
+ if (nameCheck == 'True'){
+   alert (" This name is all ride  created use anathor one")
+ }
 }

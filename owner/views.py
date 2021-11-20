@@ -34,12 +34,17 @@ def admin (request):
   
 def create (request):
   data = home.create (request)
-  db = home.db (request)
+  Name_check = data.get('name_check')
+  db = home.db (request,Name_check)
+
   
   
-  print (data)
+  #print (data)
   if db == True:
     return redirect ('/')
+  
+  else :
+    return render (request,'create.html', data)
   return render (request,'create.html', data)
 
 def homep (request,search,name):

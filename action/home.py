@@ -48,31 +48,47 @@ def create (request):
   #-----------end colour--------------
   #colour--------------
   err = 'noerr'
-  if request.method == "POST":
-    ownerss = owners.objects.all()
-    for owner in ownerss:
-      NAME = owner.name
-      if request.POST['Name']==NAME:
-        err = 'err'
+  NAME = []
+  name_check = False
+  ownerss = owners.objects.all()
+  for owner in ownerss:
+    NAME = owner.name
+    if request.method == 'POST':
+      name = request.POST['Name']
+      if NAME == name :
+        name_check = True
+  
   data = {
-   'colour' :colour,'c':c,'tcolour':tcolour,'err':err
+   'colour' :colour,'c':c,'tcolour':tcolour,'name_check':name_check
   
     }
   
     
   return data
   
-def db (request):
+def db (request,Name_check):
   datab = False
   
   if request.method == "POST":
-    new_db = owners (
-      name = request.POST['Name'],
-      email = request.POST['email'], 
-      password = request.POST['password'],
-      )
-    new_db.save()
-    datab = True
+    
+    name = request.POST['Name']
+    email = request.POST['email'] 
+    password = request.POST['password']
+    if name == "":
+      name = False
+    elif password == "":
+      password = False
+    elif email == "":
+      email = False
+    else :
+      if Name_check == False:
+        new_db = owners (
+        name = request.POST['Name'],
+        email = request.POST['email'], 
+        password = request.POST['password'],
+           )
+        new_db.save()
+        datab = True
   return datab 
 
 def search (request, owner):

@@ -1,3 +1,60 @@
 .hai {
   color: #ff007e;
 }
+.d_l {
+  border-radius: 50%;
+  height: 90px;
+  width: 90px;
+}
+.cart {
+color: #e7eaeb;
+padding-right: 50%;
+width:;
+}
+.title {
+background: #91c3cf;
+}
+.titletxt {}
+.form {
+border-radius: 50px;
+}
+.body1 {
+background:#85b3be;
+}
+.a1 {
+  margin-left: 0%;
+}
+.inp1 {
+  width: 20%;
+}
+.inp {
+  width: 40%;
+}
+.inp2 {
+  width: 15%;
+}
+.inp3 {
+  width: 50%;
+  height: 150px;
+}
+.but1 {
+  width:50%;
+  border-radius: 50px;
+}
+.head1 {
+background: #45caeb;
+
+}
+.td1 {
+}
+.close:hover {
+  background-color: #f44336;
+  color: ;
+}
+.table2 {
+  margin:10px ;
+}
+.but2 {
+  margin: 10px;
+  border-radius: 50px;
+}

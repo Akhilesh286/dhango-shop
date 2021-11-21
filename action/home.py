@@ -94,7 +94,7 @@ def db (request,Name_check):
 def search (request, owner):
   url = False  
   if request.method == "POST":
-    print (request.POST)
+    #print (request.POST)
     name = request.POST['u_name']
     password = request.POST ['Password']
     for i in owner :
@@ -109,7 +109,7 @@ def search (request, owner):
     
 def u_name (request):
   if request.method == "POST":
-    print (request.POST)
+    #print (request.POST)
     name = request.POST['u_name']
     return name
 def homep (request,name):
@@ -130,13 +130,53 @@ def homep (request,name):
     colour ="rgb(235,240,241)"
     tcolour = "#000000"
     c= 'dark'
+  pname = []
+  pPrice = []
+  pImage1 = []
+  pImage2 = []
+  pImage3 = []
+  pImage4 = []
+  pLogo = []
+  pDiscription = []
+  pDiscount = []
+  pStar = []
+  pVideo = []
+  pStock = []
   for i in product:
-    if i.owner_name == name:
-      print ('hhhhh')
+    if i.owner_name == name :
+      o_product = products.objects.get (id=i.id)
+      p_name = o_product.name
+      pname.append(p_name)
+      p_discription = o_product.discription
+      pDiscription.append(p_discription)
+      p_price = o_product.price
+      pPrice.append(p_price)
+      p_stock = o_product.stock
+      pStock.append(p_stock)
+      p_discount = o_product.discount
+      pDiscount.append(p_discount)
+      p_star = o_product.star
+      pStar.append(p_star)
+      p_image1 = o_product.image2
+      pImage1.append(p_image1)
+      p_video = o_product.video
+      p_logo = o_product.image
+      p_image2 = o_product.image3
+      pImage2.append(p_image2)
+      p_image3 = o_product.image4
+      pImage3.append(p_image3)    
+      p_image4 = o_product.image5
+      pImage4.append(p_image4)
+     
   data = {
    'colour' :colour,'c':c,'tcolour':tcolour,'oname':name
   ,'ourl':f'/add/{name}',
-  'products':product
+  'products':product,
+  'pname':pname,'pPrice':pPrice,
+  'pImage1':pImage1,
+  'pImage2':pImage2,
+  'pImage3':pImage3,
+    'pImage4':pImage4,
   
     }
   return data
@@ -147,7 +187,7 @@ def add (request,o_name):
   print (request)
   data = {'oname':o_name}
   if request.method == "POST":
-    print ('hello')
+    #print ('hello')
     new_db = products (
       name = request.POST['name'],
       price = request.POST['price'],
@@ -166,8 +206,7 @@ def add (request,o_name):
     new_db.save()
     
     data = {
-    'name':name ,
+   
     'oname':o_name,
-    'price':price
     }  
   return data

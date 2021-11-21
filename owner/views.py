@@ -49,6 +49,7 @@ def create (request):
 
 def homep (request,search,name):
   data = home.homep(request,name)
+  #print (search,name)
   return render (request,'home.html',data)
 # Create your views here.
 def js (request):

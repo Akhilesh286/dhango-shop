@@ -32,6 +32,9 @@
  </button>
 
 </div>
+{% for i in a %}
+<h1>{{i.name}}</h1>
+{% endfor %}
 <div class="table2">
   
 <h1 class="text">products</h1>
@@ -49,7 +52,7 @@
       <th scope="col"> Update</th>
     </tr>
   </thead>
-        {% for product in products %}
+        {% for product in allProducts %}
   <tbody class="body1">
     <tr>
 
@@ -94,7 +97,7 @@
       <th scope="col"> Update</th>
     </tr> 
   </thead>
-  {% for product in products %}
+  {% for product in allProducts %}
   
   <tbody class="body1">
       <tr>

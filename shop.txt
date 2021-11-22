@@ -1,0 +1,63 @@
+  '''
+  'pname':pname,'pPrice':pPrice,
+  'pImage1':pImage1,
+  'pImage2':pImage2,
+  'pImage3':pImage3,
+    'pImage4':pImage4,'allProduct':
+      allProduct,
+      '''
+            '''
+      a1 = p_name = o_product.name
+      pname.append(p_name)
+      a2 = p_discription = o_product.discription
+      pDiscription.append(p_discription)
+      a3 = p_price = o_product.price
+      pPrice.append(p_price)
+      a4 = p_stock = o_product.stock
+      pStock.append(p_stock)
+      a5 = p_discount = o_product.discount
+      pDiscount.append(p_discount)
+      a6 = p_star = o_product.star
+      pStar.append(p_star)
+      a7 = p_image1 = o_product.image2
+      pImage1.append(p_image1)
+      a8 = p_video = o_product.video
+      pVideo.append(p_video)
+      a9 = p_logo = o_product.image
+      pLogo.append(p_logo)
+      a10 = p_image2 = o_product.image3
+      pImage2.append(p_image2)
+      a11 = p_image3 = o_product.image4
+      pImage3.append(p_image3)    
+      a12 = p_image4 = o_product.image5
+      pImage4.append(p_image4)
+      allProduct.append([a1])
+      allProduct.append([a2])
+
+      allProduct.append([a3])
+      allProduct.append([a4])
+      allProduct.append([a5])
+      allProduct.append([a6])
+      allProduct.append([a7])
+      allProduct.append([a8])
+      allProduct.append([a9])
+      allProduct.append([a10])
+      allProduct.append([a11])
+      allProduct.append([a12])
+  for i in allProduct:
+    for j in i:
+      print (j)
+      '''
+      pname = []
+  pPrice = []
+  pImage1 = []
+  pImage2 = []
+  pImage3 = []
+  pImage4 = []
+  pLogo = []
+  pDiscription = []
+  pDiscount = []
+  pStar = []
+  pVideo = []
+  pStock = []
+  allProduct = []

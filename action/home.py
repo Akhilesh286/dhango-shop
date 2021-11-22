@@ -130,53 +130,26 @@ def homep (request,name):
     colour ="rgb(235,240,241)"
     tcolour = "#000000"
     c= 'dark'
-  pname = []
-  pPrice = []
-  pImage1 = []
-  pImage2 = []
-  pImage3 = []
-  pImage4 = []
-  pLogo = []
-  pDiscription = []
-  pDiscount = []
-  pStar = []
-  pVideo = []
-  pStock = []
+  
+  allProducts = []
   for i in product:
+    
     if i.owner_name == name :
       o_product = products.objects.get (id=i.id)
-      p_name = o_product.name
-      pname.append(p_name)
-      p_discription = o_product.discription
-      pDiscription.append(p_discription)
-      p_price = o_product.price
-      pPrice.append(p_price)
-      p_stock = o_product.stock
-      pStock.append(p_stock)
-      p_discount = o_product.discount
-      pDiscount.append(p_discount)
-      p_star = o_product.star
-      pStar.append(p_star)
-      p_image1 = o_product.image2
-      pImage1.append(p_image1)
-      p_video = o_product.video
-      p_logo = o_product.image
-      p_image2 = o_product.image3
-      pImage2.append(p_image2)
-      p_image3 = o_product.image4
-      pImage3.append(p_image3)    
-      p_image4 = o_product.image5
-      pImage4.append(p_image4)
-     
+      allProducts.append(o_product)
+      
+      
+      print (o_product.name)
+    
+
+      print (o_product)
   data = {
    'colour' :colour,'c':c,'tcolour':tcolour,'oname':name
   ,'ourl':f'/add/{name}',
   'products':product,
-  'pname':pname,'pPrice':pPrice,
-  'pImage1':pImage1,
-  'pImage2':pImage2,
-  'pImage3':pImage3,
-    'pImage4':pImage4,
+  'allProducts':allProducts
+
+
   
     }
   return data

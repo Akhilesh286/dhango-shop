@@ -64,7 +64,7 @@
        <td>{{product.discount}}</td>
        <td>{{product.star}}</td>
        <td class="td1">
-             <span class="a1 close button"><a style="text-decoration: none; color: black;" href="">delete</a></span></li>
+             <span class="a1 close button"><a style="text-decoration: none; color: black;" href="/delete/{{product.id}}/p/{{oname}}">delete</a></span></li>
   </td>
   <td>
              <span class="a1 close button"><a style="text-decoration: none; color: black;" href="">Update</a></span></li>
@@ -113,10 +113,10 @@
        <td>{{product.image4}}</td>
        <td>{{product.image5}}</td>
        <td class="td1">
-             <span class="a1 close button"><a style="text-decoration: none; color: black;" href="">delete</a></span></li>
+             <span class="a1 close button"><a style="text-decoration: none; color: black;" href="/delete/{{product.id}}">delete</a></span></li>
   </td>
   <td>
-             <span class="a1 close button"><a style="text-decoration: none; color: black;" href="">Update</a></span></li>
+             <span class="a1 close button"><a style="text-decoration: none; color: black;" href="/update/{{product.id}}/{{name}}">Update</a></span></li>
       </td>
        </td>
     </tr>  
@@ -126,7 +126,7 @@
 </div>
 </div>
 <div>
-  
+ <h1>{{oname}}</h1> 
 </div>
 <h1>{{pname}}</h1>
 {% endblock %}

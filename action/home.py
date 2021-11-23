@@ -158,7 +158,10 @@ def homep (request,name):
 
 def add (request,o_name):
   print (request)
-  data = {'oname':o_name}
+  data = {
+    'oname':o_name,'t_f':False,
+    }  
+  #data = {'oname':o_name}
   if request.method == "POST":
     #print ('hello')
     new_db = products (
@@ -179,7 +182,6 @@ def add (request,o_name):
     new_db.save()
     
     data = {
-   
-    'oname':o_name,
+    'oname':o_name,'t_f':True,
     }  
   return data

@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.shortcuts import render , redirect
 from django.http import HttpResponse
-from .models import owners 
+from .models import owners , products
 from action import home 
 # Create your views here.
 def index (request):
@@ -18,11 +18,16 @@ def index (request):
  
   return render (request ,'login.html',data)
 
-def delete (request,pk):
-  owner = owners.objects.get (id=pk)
+def delete (request,pk,a_p,name):
+  if a_p == "p":
+    product=  products.objects.get (id=pk)
+    product.delete()
+    return redirect (f'/b/True/{name}')
+  if a_p == 'a':
+    owner = owners.objects.get (id=pk)
   
-  owner.delete()
-  return redirect ('/')
+    owner.delete()
+    return redirect ('/')
 
 def admin (request):
   owner=owners.objects.all()
@@ -62,4 +67,8 @@ def js (request):
 
 def add (request,o_name):
   data = home.add(request,o_name)
+  t_f = data.get('t_f')
+  if t_f == True:
+    return redirect (f'/b/True/{o_name}')
+  print(data)
   return render (request,'add.html',data)

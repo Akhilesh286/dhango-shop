@@ -7,13 +7,13 @@ class owners (models.Model):
   
 
 
-class products (models.Model):
+class items (models.Model):
   owner_name = models.CharField(max_length=255),
   item_name = models.CharField(max_length=255),
   discount = models.FloatField(),
   price = models.FloatField(),
   rate = models.FloatField(),
   image = models.CharField(max_length=25000),
-  
+
   
 # Create your models here.

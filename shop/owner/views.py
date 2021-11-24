@@ -42,3 +42,8 @@ def create (request):
 def homep (request,search,name):
   data = home.color(request)
   return render (request,'home.html',data)
+  
+ 
+def css (request):
+  return render (request,'css.html')
+  

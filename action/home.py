@@ -185,3 +185,37 @@ def add (request,o_name):
     'oname':o_name,'t_f':True,
     }  
   return data
+
+def update (request,pk,o_name):
+  product = []
+  t_f = False
+  a = products.objects.get (id=pk)
+  product.append (a)
+  if request.method == "POST":
+    #print ('hello')
+    new_db = products (
+      name = request.POST['name'],
+      price = request.POST['price'],
+      image = request.POST['logo'],
+      image2 = request.POST['image2'],
+      image3 = request.POST['image3'],
+      image4 = request.POST['image4'],
+      image5 = request.POST['image5'],
+      stock = request.POST['stock'],
+      video = request.POST['video'],
+      star = request.POST['star'],
+      discription = request.POST['discription'],
+      discount = request.POST['discount'],
+      owner_name = o_name
+    )
+    new_db.save()
+    owner = products.objects.get (id=pk)
+  
+    owner.delete()
+    t_f = True
+    
+  data = {
+    'oname':o_name,'t_f':t_f,
+    'products':product
+    }
+  return data

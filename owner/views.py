@@ -27,7 +27,7 @@ def delete (request,pk,a_p,name):
     owner = owners.objects.get (id=pk)
   
     owner.delete()
-    return redirect ('/')
+    return redirect ('/a')
 
 def admin (request):
   owner=owners.objects.all()
@@ -72,3 +72,14 @@ def add (request,o_name):
     return redirect (f'/b/True/{o_name}')
   print(data)
   return render (request,'add.html',data)
+  
+  
+
+def update (request,pk,name):
+  data = home.update(request,pk,name)
+  t_f = data.get('t_f')
+  if t_f == True:
+    return redirect (f'/b/True/{name}')
+  print(data)
+  #return render (request,'add.html',data)
+  return render (request,'update.html',data)

@@ -32,11 +32,7 @@
  </button>
 
 </div>
-{% for i in a %}
-<h1>{{i.name}}</h1>
-{% endfor %}
 <div class="table2">
-  
 <h1 class="text">products</h1>
 <table class="table">
   <thead class="thead-dark head1">
@@ -66,8 +62,9 @@
        <td class="td1">
              <span class="a1 close button"><a style="text-decoration: none; color: black;" href="/delete/{{product.id}}/p/{{oname}}">delete</a></span></li>
   </td>
+  
   <td>
-             <span class="a1 close button"><a style="text-decoration: none; color: black;" href="">Update</a></span></li>
+             <span class="a1 close button"><a style="text-decoration: none; color: black;" href="/update/{{product.id}}/{{oname}}/">Update</a></span></li>
       </td>
        </td>
     </tr>
@@ -113,10 +110,10 @@
        <td>{{product.image4}}</td>
        <td>{{product.image5}}</td>
        <td class="td1">
-             <span class="a1 close button"><a style="text-decoration: none; color: black;" href="/delete/{{product.id}}">delete</a></span></li>
+             <span class="a1 close button"><a style="text-decoration: none; color: black;" href="/delete/{{product.id}}/p/{{oname}}">delete</a></span></li>
   </td>
   <td>
-             <span class="a1 close button"><a style="text-decoration: none; color: black;" href="/update/{{product.id}}/{{name}}">Update</a></span></li>
+             <span class="a1 close button"><a style="text-decoration: none; color: black;" href="/update/{{product.id}}/{{oname}}">Update</a></span></li>
       </td>
        </td>
     </tr>  
@@ -126,7 +123,5 @@
 </div>
 </div>
 <div>
- <h1>{{oname}}</h1> 
 </div>
-<h1>{{pname}}</h1>
 {% endblock %}

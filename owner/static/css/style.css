@@ -5,6 +5,7 @@
   border-radius: 50%;
   height: 90px;
   width: 90px;
+  
 }
 .cart {
 color: #e7eaeb;
@@ -57,4 +58,7 @@ background: #45caeb;
 .but2 {
   margin: 10px;
   border-radius: 50px;
+}
+.cbody {
+  background: #0f00ff;
 }

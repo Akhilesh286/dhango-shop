@@ -11,7 +11,7 @@ def index (request):
   search = home.search (request,owner)
   u_name = home.u_name(request)
   if search == True :
-    return redirect (f'http://127.0.0.1:8000/b/True/{u_name}/')
+    return redirect (f'/owner/homep/True/{u_name}/')
   
     
  
@@ -22,12 +22,12 @@ def delete (request,pk,a_p,name):
   if a_p == "p":
     product=  products.objects.get (id=pk)
     product.delete()
-    return redirect (f'/b/True/{name}')
+    return redirect (f'/owner/homep/True/{name}')
   if a_p == 'a':
     owner = owners.objects.get (id=pk)
   
     owner.delete()
-    return redirect ('/a')
+    return redirect ('/owner/admin')
 
 def admin (request):
   owner=owners.objects.all()
@@ -46,7 +46,7 @@ def create (request):
   
   #print (data)
   if db == True:
-    return redirect ('/')
+    return redirect ('/owner/')
   
   else :
     return render (request,'create.html', data)
@@ -69,7 +69,7 @@ def add (request,o_name):
   data = home.add(request,o_name)
   t_f = data.get('t_f')
   if t_f == True:
-    return redirect (f'/b/True/{o_name}')
+    return redirect (f'owner/homep/True/{o_name}')
   print(data)
   return render (request,'add.html',data)
   
@@ -79,7 +79,11 @@ def update (request,pk,name):
   data = home.update(request,pk,name)
   t_f = data.get('t_f')
   if t_f == True:
-    return redirect (f'/b/True/{name}')
+    return redirect (f'/owner/homep/True/{name}')
   print(data)
   #return render (request,'add.html',data)
   return render (request,'update.html',data)
+
+def ohome (request,name):
+  data = home.ohome(request,name)
+  return render (request,'ohome.html',data)

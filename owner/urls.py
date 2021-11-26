@@ -3,16 +3,17 @@ from . import views
 
 urlpatterns = [
     path('',views.index ,name = 'index' ),
-    path('a/',views.admin ,name = 'admin' ),
+    path('admin/',views.admin ,name = 'admin' ),
     path ('update/<str:pk>/<str:name>/', views.update),
     
     
     path ('delete/<str:pk>/<str:a_p>/<str:name>',views.delete,name="delete"),
-    path ('c/',views.create),
+    path ('create/',views.create),
     path ('add/<str:o_name>/',views.add),
-
+    path ('ohome/<str:name>', views.ohome),
+    
     #dynamic url
-    path ('b/<str:search>/<str:name>/',views.homep ),
+    path ('homep/<str:search>/<str:name>/',views.homep ),
     
     path ('js/',views.js)
     

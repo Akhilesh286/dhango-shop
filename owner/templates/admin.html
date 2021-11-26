@@ -10,7 +10,7 @@
 <ul id="myUL">
   {% for owner in owners reversed %}
   <li>{{owner.name}} <span class="close"><a style="text-decoration: none; color: black;" href="delete/{{owner.id}}">Delete</a></span></li>
-    <li>{{owner.password}} <span class="close"><a style="text-decoration: none; color: black;" href="delete/{{owner.id}}">Delete</a></span></li>  <li>{{owner.email}} <span class="close"><a style="text-decoration: none; color: black;" href="delete/{{owner.id}}">Delete</a></span></li>
+    <li>{{owner.password}} <span class="close"><a style="text-decoration: none; color: black;" href="delete/{{owner.id}}">Delete</a></span></li>  <li>{{owner.email}} <span class="close"><a style="text-decoration: none; color: black;" href="/owner/delete/a/{{owner.id}}">Delete</a></span></li>
   {% endfor %}
 </ul>
   </body>

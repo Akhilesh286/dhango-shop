@@ -23,12 +23,21 @@
   </div>
 
 </section>
-<h1 class="text">add New products</h1>
+<div class="row">
+<h1 class="text text-left">add New products</h1>
+</div>
 <div class="">
  <button type="button" class="btn btn-outline-primary but2"><a href="{{ourl}}" style="text-decoration: none;">Add products </a>
  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
   <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"/>
 </svg>
+ </button>
+
+</div>
+<h1 class="text text-right">items in  user view</h1>
+<div class="">
+ <button type="button" class="btn btn-outline-primary but2"><a href="/owner/ohome/{{oname}}" style="text-decoration: none;">items in user view</a>
+
  </button>
 
 </div>
@@ -60,11 +69,11 @@
        <td>{{product.discount}}</td>
        <td>{{product.star}}</td>
        <td class="td1">
-             <span class="a1 close button"><a style="text-decoration: none; color: black;" href="/delete/{{product.id}}/p/{{oname}}">delete</a></span></li>
+             <span class="a1 close button"><a style="text-decoration: none; color: black;" href="/owner/delete/{{product.id}}/p/{{oname}}">delete</a></span></li>
   </td>
   
   <td>
-             <span class="a1 close button"><a style="text-decoration: none; color: black;" href="/update/{{product.id}}/{{oname}}/">Update</a></span></li>
+             <span class="a1 close button"><a style="text-decoration: none; color: black;" href="/owner/update/{{product.id}}/{{oname}}/">Update</a></span></li>
       </td>
        </td>
     </tr>
@@ -110,10 +119,10 @@
        <td>{{product.image4}}</td>
        <td>{{product.image5}}</td>
        <td class="td1">
-             <span class="a1 close button"><a style="text-decoration: none; color: black;" href="/delete/{{product.id}}/p/{{oname}}">delete</a></span></li>
+             <span class="a1 close button"><a style="text-decoration: none; color: black;" href="/owner/delete/{{product.id}}/p/{{oname}}">delete</a></span></li>
   </td>
   <td>
-             <span class="a1 close button"><a style="text-decoration: none; color: black;" href="/update/{{product.id}}/{{oname}}">Update</a></span></li>
+             <span class="a1 close button"><a style="text-decoration: none; color: black;" href="/owner/update/{{product.id}}/{{oname}}">Update</a></span></li>
       </td>
        </td>
     </tr>  

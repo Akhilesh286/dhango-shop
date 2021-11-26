@@ -145,7 +145,7 @@ def homep (request,name):
       print (o_product)
   data = {
    'colour' :colour,'c':c,'tcolour':tcolour,'oname':name
-  ,'ourl':f'/add/{name}',
+  ,'ourl':f'/owner/add/{name}',
   'products':product,
   'allProducts':allProducts
 
@@ -219,3 +219,47 @@ def update (request,pk,o_name):
     'products':product
     }
   return data
+
+
+def ohome (request,name):
+  req = request.GET
+  owner = owners.objects.all()
+  product = products.objects.all()
+  #-----------colour--------------#
+ 
+  c = 'light'
+  # data in variable
+  dark = req.get ('dark')
+  colour = "#1e2526"
+  tcolour = "#5eb8cf"
+  if dark == 'dark' :
+    colour="rgb(24,27,28)"
+    tcolour = "#ffffff"
+  elif dark == 'light':
+    colour ="rgb(235,240,241)"
+    tcolour = "#000000"
+    c= 'dark'
+  
+  allProducts = []
+  for i in product:
+    
+    if i.owner_name == name :
+      o_product = products.objects.get (id=i.id)
+      allProducts.append(o_product)
+      
+      
+      print (o_product.name)
+    
+
+      print (o_product)
+  data = {
+   'colour' :colour,'c':c,'tcolour':tcolour,'oname':name
+  ,'ourl':f'/add/{name}',
+  'products':product,
+  'allProducts':allProducts
+
+
+  
+    }
+  return data
+  #-----------end colou

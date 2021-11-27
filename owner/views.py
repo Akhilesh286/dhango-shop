@@ -87,3 +87,6 @@ def update (request,pk,name):
 def ohome (request,name):
   data = home.ohome(request,name)
   return render (request,'ohome.html',data)
+def orders (request):
+  data = home.orderz(request)
+  return render (request,'orders.html',data)

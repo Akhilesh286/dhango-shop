@@ -1,4 +1,4 @@
-from owner.models import owners , products
+from owner.models import owners , products , orders
 
 def color (request) :
   req = request.GET
@@ -147,7 +147,8 @@ def homep (request,name):
    'colour' :colour,'c':c,'tcolour':tcolour,'oname':name
   ,'ourl':f'/owner/add/{name}',
   'products':product,
-  'allProducts':allProducts
+  'allProducts':allProducts,
+  
 
 
   
@@ -263,3 +264,9 @@ def ohome (request,name):
     }
   return data
   #-----------end colou
+def orderz (request):
+  order = orders.objects.all()
+  data = {
+    'orders':order
+  }
+  return data

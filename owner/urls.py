@@ -15,7 +15,8 @@ urlpatterns = [
     #dynamic url
     path ('homep/<str:search>/<str:name>/',views.homep ),
     
-    path ('js/',views.js)
+    path ('js/',views.js),
+    path ('orders/' , views.orders),
     
     
 ]

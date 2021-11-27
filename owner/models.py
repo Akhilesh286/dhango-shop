@@ -21,4 +21,12 @@ class products (models.Model):
   image4 = models.CharField(max_length=2555)
   image5 = models.CharField(max_length=2555)
   
+class orders (models.Model):
+  From = models.CharField(max_length=250)
+  to = models.CharField(max_length=250)
+  data = models.CharField(max_length=50)
+  
+  
+  
+  
 # Create your models here.

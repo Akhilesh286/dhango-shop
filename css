@@ -1,0 +1,28 @@
+<style type="text/css" media="all">
+        .body {
+         background-image: url('{{image}}');
+      }
+      .from{
+        margin: 1%;
+        margin-right: 20%;
+        padding-left: 10%;
+        padding-right: 10%;
+        background: #9ae1f3;
+        float: left;
+        border-radius: 25px;
+      }
+      .from1 {
+       margin: 1%;
+        margin-left: 20%;
+        padding-left: 10%;
+        padding-right: 10%;
+        background: #9ae1f3;
+        float: right;
+        border-radius: 25px;
+      }
+
+      .text {
+        float: left;
+        margin: 1%;
+      }
+</style>

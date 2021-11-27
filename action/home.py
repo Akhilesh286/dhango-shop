@@ -267,6 +267,6 @@ def ohome (request,name):
 def orderz (request):
   order = orders.objects.all()
   data = {
-    'orders':order
+    'orders':order,'image':'https://wallpapers.com/images/high/splashing-water-gradient-background-mobile-v5hlk4ta55rn5w3x.jpg'
   }
   return data

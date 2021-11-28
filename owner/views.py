@@ -90,3 +90,6 @@ def ohome (request,name):
 def orders (request):
   data = home.orderz(request)
   return render (request,'orders.html',data)
+def orders1 (request):
+  data = home.orderz1(request)
+  return render (request,'orders.html',data)

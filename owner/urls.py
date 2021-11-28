@@ -17,6 +17,7 @@ urlpatterns = [
     
     path ('js/',views.js),
     path ('orders/' , views.orders),
+    path ('orders1/' , views.orders1),
     
     
 ]

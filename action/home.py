@@ -186,7 +186,6 @@ def add (request,o_name):
     'oname':o_name,'t_f':True,
     }  
   return data
-
 def update (request,pk,o_name):
   product = []
   t_f = False
@@ -194,6 +193,8 @@ def update (request,pk,o_name):
   product.append (a)
   if request.method == "POST":
     #print ('hello')
+    owner = products.objects.get (id=pk)
+    owner.delete()
     new_db = products (
       name = request.POST['name'],
       price = request.POST['price'],
@@ -210,9 +211,7 @@ def update (request,pk,o_name):
       owner_name = o_name
     )
     new_db.save()
-    owner = products.objects.get (id=pk)
-  
-    owner.delete()
+ 
     t_f = True
     
   data = {
@@ -220,8 +219,6 @@ def update (request,pk,o_name):
     'products':product
     }
   return data
-
-
 def ohome (request,name):
   req = request.GET
   owner = owners.objects.all()
@@ -265,8 +262,40 @@ def ohome (request,name):
   return data
   #-----------end colou
 def orderz (request):
+  if request.method == "POST":
+    new_db = orders (
+      From = "Akhilesh",
+      data = request.POST['data'],
+      to = "Akhil"
+      )
+    new_db.save()
+  From = []
   order = orders.objects.all()
+  for i in order :
+    if i.to == "Akhilesh":
+      From1 = orders.objects.get (id=i.id)
+      From.append(From1)
+    
   data = {
-    'orders':order,'image':'https://wallpapers.com/images/high/splashing-water-gradient-background-mobile-v5hlk4ta55rn5w3x.jpg'
+    'orders':From,'image':'https://wallpapers.com/images/high/splashing-water-gradient-background-mobile-v5hlk4ta55rn5w3x.jpg'
+  }
+  return data
+def orderz1 (request):
+  if request.method == "POST":
+    new_db = orders (
+      From = "Akhil",
+      data = request.POST['data'],
+      to = "Akhilesh"
+      )
+    new_db.save()
+  From = []
+  order = orders.objects.all()
+  for i in order :
+    if i.to == "Akhil":
+      From1 = orders.objects.get (id=i.id)
+      From.append(From1)
+    
+  data = {
+    'orders':From,'image':'https://wallpapers.com/images/high/splashing-water-gradient-background-mobile-v5hlk4ta55rn5w3x.jpg'
   }
   return data

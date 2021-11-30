@@ -261,12 +261,12 @@ def ohome (request,name):
     }
   return data
   #-----------end colou
-def orderz (request,name):
+def orderz (request,name,toname):
   if request.method == "POST":
     new_db = orders (
       From = name,
       data = request.POST['data'],
-      to = request.POST['to']
+      to = toname
       )
     new_db.save()
   From = []
@@ -280,7 +280,8 @@ def orderz (request,name):
     'orders':order,'name': name,'image':'https://wallpapers.com/images/high/splashing-water-gradient-background-mobile-v5hlk4ta55rn5w3x.jpg'
   }
   return data
-def contact (request):
+def contact (request,name):
+  img = [1,2,4]
   if request.method == "POST":
     new_db = orders (
       From = "Akhil",
@@ -296,6 +297,6 @@ def contact (request):
       From.append(From1)
     
   data = {
-    'orders':order,'image':'https://wallpapers.com/images/high/splashing-water-gradient-background-mobile-v5hlk4ta55rn5w3x.jpg'
+    'orders':order,'img':img,'name':name,'image':'https://wallpapers.com/images/high/splashing-water-gradient-background-mobile-v5hlk4ta55rn5w3x.jpg'
   }
   return data

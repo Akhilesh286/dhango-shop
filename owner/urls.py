@@ -16,8 +16,8 @@ urlpatterns = [
     path ('homep/<str:search>/<str:name>/',views.homep ),
     
     path ('js/',views.js),
-    path ('orders/' , views.orders),
-    path ('orders1/' , views.orders1),
+    path ('orders/<str:name>/' , views.orders),
+    path ('contact/<str:name>/' , views.contact),
     
     
 ]

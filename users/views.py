@@ -8,3 +8,12 @@ from action import user
 def home (request):
   data = user.home(request)
   return render (request,'home1.html',data)
+
+def cart (request):
+  return HttpResponse ('hello Cart')
+
+def login (request):
+  return HttpResponse ('hello login')
+
+def create (request):
+  return HttpResponse ('<h2>hello singup </h1>')

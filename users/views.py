@@ -10,10 +10,11 @@ def home (request):
   return render (request,'home1.html',data)
 
 def cart (request):
-  return HttpResponse ('hello Cart')
+  return render (request,'cart.html')
 
 def login (request):
-  return HttpResponse ('hello login')
-
+  data = user.login(request)
+  return render (request,'login1.html',data)
 def create (request):
-  return HttpResponse ('<h2>hello singup </h1>')
+  data = user.create(request)
+  return render (request,'create1.html')

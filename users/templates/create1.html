@@ -1,0 +1,103 @@
+{% extends 'main1.html' %}
+{%  block head %}
+<title>owners home</title>
+{% endblock %}
+{% block body %}
+<section class="h-100 h-custom" style="background-color: #8fc4b7;">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-lg-8 col-xl-6">
+        <div class="card rounded-3">
+          <img src="https://colorlib.com/etc/regform/colorlib-regform-33/images/form-v7.jpg" class="w-100" style="border-top-left-radius: .3rem; border-top-right-radius: .3rem;" alt="Sample photo">
+          <div class="card-body p-4 p-md-5">
+            <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Registration Info</h3>
+
+            <form action="" method="post" accept-charset="utf-8">
+              {% csrf_token %} 
+              <div class="form-outline mb-4">
+                <input placeholder="Name" type="text" id="form3Example1q" class="form-control" 
+                name="name"
+                />
+                <label class="form-label" for="form3Example1q">Name</label>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 mb-4">
+
+                  <div class="form-outline datepicker">
+                    
+                    <input
+name="date"
+                    type="date"
+                    class="form-control"
+                    id="exampleDatepicker1"
+                    />
+                    <label for="exampleDatepicker1" class="form-label">Select a date</label>
+                  </div>
+
+                </div>
+                <div class="col-md-6 mb-4">
+
+         
+
+                </div>
+              </div>
+
+ <div class="form-check">
+  <input value="female" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+  <label class="form-check-label" for="flexRadioDefault1">
+    female
+  </label>
+</div>
+<div class="form-check">
+  <input value="male" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+  <label class="form-check-label" for="flexRadioDefault2">
+    male
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="flexRadioDefault"
+  value="other"
+  id="flexRadioDefault2" checked>
+  <label class="form-check-label" for="flexRadioDefault2">
+    other </label>
+</div>
+              <div class="row mb-4 pb-2 pb-md-0 mb-md-5">
+                <div class="col-md-6">
+
+                  <div class="form-outline">
+                    <input 
+                    placeholder="password"
+                    name="password"
+                    type="password" id="form3Example1w" class="form-control" />
+                    <label class="form-label" for="form3Example1w">password</label>
+                  </div>
+       <div class="form-outline">
+                    <input 
+                    placeholder="email"
+                    name="email"
+                    type="email" id="form3Example1w" class="form-control" />
+                    <label class="form-label" for="form3Example1w">email</label>
+                  </div>
+       <div class="form-outline">
+                    <input 
+                    placeholder="phone number"
+                    name="number"
+                    type="number" id="form3Example1w" class="form-control" />
+                    <label class="form-label" for="form3Example1w">phone number</label>
+                  </div>
+
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-success btn-lg mb-1">Submit</button>
+
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

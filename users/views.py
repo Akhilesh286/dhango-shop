@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from django.shortcuts import render , redirect
 from owner.models import owners , products
 from action import user
+from .models import users
 # Create your views here.
 
 def home (request):
@@ -14,7 +15,21 @@ def cart (request):
 
 def login (request):
   data = user.login(request)
-  return render (request,'login1.html',data)
+  uname = user.uname(request)
+  if data == True:
+    return redirect (f'/home/{uname}/')
+  return render (request,'login1.html')
 def create (request):
-  data = user.create(request)
-  return render (request,'create1.html')
+  namecheck = user.create(request)
+  null = user.db(request,namecheck)
+  if null == True :
+    return redirect ('/login')
+  else :
+    return render (request,'create1.html',{'nameC':namecheck})
+  return render (request,'create1.html',{'nameC':namecheck})
+def homep (request,pk):
+  data = user.homep(request,pk)
+  return render (request,'homep1.html')
+
+def contribute (request):
+  return render (request,'contribute.html')

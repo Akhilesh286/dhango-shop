@@ -12,4 +12,7 @@ class Rate (models.Model):
   pid = models.IntegerField()
   comment = models.CharField(max_length=25000)
   star = models.FloatField()
-  
+
+class cart (models.Model):
+  pid = models.IntegerField()
+  uid = models.IntegerField()

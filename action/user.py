@@ -2,7 +2,7 @@ from owner.models import owners , products , orders
 
 import time
 
-from users.models import users , Rate
+from users.models import users , Rate , cart
 def home (request):
   product = products.objects.all()
   data = {
@@ -83,7 +83,8 @@ def uname (req):
 def homep (req,pk):
   product = products.objects.all()
   data = {
-   'products':product
+   'products':product,
+   'uid':pk,
   }
   return data
 def rate (req,pk):
@@ -108,5 +109,38 @@ def rate (req,pk):
       rates.append(Rate1)
   data = {
     'rate':rates
+  }
+  return data
+
+def acart (req,uid,pid):
+  
+  new_db = cart(
+    pid = pid ,
+    uid = uid
+    )
+  new_db.save()
+  return True
+def cart1 (req,uid):
+  uid = int(uid)
+  carts =  cart.objects.all()
+  cartS = []
+  for i in carts :
+    if i.uid == uid :
+      cart1 = cart.objects.get(id=i.id)
+      cartS.append(cart1)
+      
+  product1 = []
+  for i in cartS :
+    product = products.objects.get (id=i.pid)
+    product1.append(product)
+  data = {
+    'products':product1,
+  }
+  return data
+def buy (req,pk):
+  pk = int (pk)
+  product = products.objects.get(id=pk)
+  data = {
+    'products':product
   }
   return data

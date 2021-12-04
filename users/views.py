@@ -10,8 +10,10 @@ def home (request):
   data = user.home(request)
   return render (request,'home1.html',data)
 
-def cart (request):
-  return render (request,'cart.html')
+def cart (request,uid):
+  data = user.cart1(request,uid)
+  print (data)
+  return render (request,'cart.html',data)
 
 def login (request):
   data = user.login(request)
@@ -37,3 +39,12 @@ def contribute (request):
 def rate (request,pk):
   data = user.rate(request,pk)
   return render (request,'rate.html',data)
+
+def addcart (request,uid,pid):
+  acart = user.acart(request,uid,pid)
+  if acart == True :
+    return redirect(f'/home/{uid}')
+def buy (request,pk):
+  data = user.buy (request,pk)
+  print (data)
+  return render (request,'buy.html',data)

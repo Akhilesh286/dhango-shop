@@ -29,7 +29,11 @@ def create (request):
   return render (request,'create1.html',{'nameC':namecheck})
 def homep (request,pk):
   data = user.homep(request,pk)
-  return render (request,'homep1.html')
+  return render (request,'homep1.html',data)
 
 def contribute (request):
-  return render (request,'contribute.html')
+  return render (request,'contribute1.html')
+
+def rate (request,pk):
+  data = user.rate(request,pk)
+  return render (request,'rate.html',data)

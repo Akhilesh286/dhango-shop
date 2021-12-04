@@ -8,3 +8,8 @@ class users (models.Model):
   phone = models.IntegerField()
   date = models.DateField()
   gender = models.CharField(max_length=50)
+class Rate (models.Model):
+  pid = models.IntegerField()
+  comment = models.CharField(max_length=25000)
+  star = models.FloatField()
+  

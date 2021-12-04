@@ -7,6 +7,6 @@ urlpatterns = [
   path ('login/',views.login),
   path ('create/',views.create),
   path ('home/<str:pk>/',views.homep)
-  ,
-  path ('contribute/', views.contribute)
+  ,path ('rate/<str:pk>/',views.rate)
+  ,path ('contribute/', views.contribute),
   ]

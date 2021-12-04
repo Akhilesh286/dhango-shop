@@ -2,7 +2,7 @@ from owner.models import owners , products , orders
 
 import time
 
-from users.models import users
+from users.models import users , Rate
 def home (request):
   product = products.objects.all()
   data = {
@@ -81,4 +81,32 @@ def uname (req):
     uid = uname1.id
     return uid
 def homep (req,pk):
-  return True
+  product = products.objects.all()
+  data = {
+   'products':product
+  }
+  return data
+def rate (req,pk):
+  product = products.objects.get (id=pk)
+  if req.method == "POST":
+    comment = req.POST['comments']
+    star = req.POST['star']
+    print (comment,star)
+    new_db = Rate (
+      comment = comment,
+      pid = product.id,
+      star = star,
+      )
+    new_db.save()
+  pk = int(pk)
+  rate = Rate.objects.all()
+  product = products.objects.get (id=pk)
+  rates = []
+  for i in rate :
+    if i.pid == pk :
+      Rate1 = Rate.objects.get(id=i.id)
+      rates.append(Rate1)
+  data = {
+    'rate':rates
+  }
+  return data

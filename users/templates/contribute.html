@@ -1,32 +1,94 @@
 {% extends 'main1.html' %}
 {%  block head %}
 <title>owners home</title>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 {% endblock %}
 {% block body %}
 <style type="text/css" media="all">
-  .container1 {
-  position: relative;
-  text-align: center;
-  color: #000000;
-  width: 100%;
-  height: 100%;
-}
-
-/* Bottom left text */
-
-/* Centered text */
-.centered {
+  body{
+    background: #000000;
+  }
+  .main {
+    width: 100%;
+  }
+  .text {
+    width: 50%;
+    height: 10%;
+    background: #561e8d;
+    color: #cbcbcb;
+    font-style: italic;
+    border-radius: 15px;
+  }
+  .imag {
+    border-radius: 25px;
+  }
+  .timg {
+    width: 100%;
+    height: 50%;
+    border-radius: 25px;
+  }
+  .limg {
+    width: 100%;
+    height: 10%;
+    background:;
+  }
+  .rtext {
+    width: 100%;
+    height: 10%;
+    color: #7fb772;
+    
+  }
+  .img {
+    width: 100%;
+  }
+  .centered {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
+.container1 {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+.t {
+  margin-left: 10%;
+  margin-right: 10%;
+  font-style: italic;
+}
 </style>
-<div class="container1">
-  <img src="http://www.thewowstyle.com/wp-content/uploads/2015/04/Desktop-Wallpaper-HD2.jpg" alt="Snow" style="width:100%;   height:100% ;">
-  <div class="centered"><h1>hello</h1>
-  <a class="btn btn-primary" href="/owner" role="button">contribute</a>
-
-  </div>
+<div class="timg w3-animate-top">
+ <img class="img" src="https://mdbootstrap.com/img/Photos/new-templates/bootstrap-login-form/draw2.png" alt="" />
+</div>
+<div class="main">
+  <div class="row">
+<div class="col-6 col-md-6 col-xl-6 text w3-animate-right">
+  <h1 class="text">hello hai aaamdndjdnd mekmdmdmdmdmdmd mdmdmdmndnddndmndf nndndjfkdkfkfk bomb ubl for VIP ch GPe</h1>
+</div>
+<div class="col-6 col-md-6 col-xl-6 imag w3-animate-left">
+  <svg class="" xmlns="http://www.w3.org/2000/svg" width="300" height="300" fill="white" class="bi bi-currency-dollar" viewBox="0 0 16 16">
+  <path d="M4 10.781c.148 1.667 1.513 2.85 3.591 3.003V15h1.043v-1.216c2.27-.179 3.678-1.438 3.678-3.3 0-1.59-.947-2.51-2.956-3.028l-.722-.187V3.467c1.122.11 1.879.714 2.07 1.616h1.47c-.166-1.6-1.54-2.748-3.54-2.875V1H7.591v1.233c-1.939.23-3.27 1.472-3.27 3.156 0 1.454.966 2.483 2.661 2.917l.61.162v4.031c-1.149-.17-1.94-.8-2.131-1.718H4zm3.391-3.836c-1.043-.263-1.6-.825-1.6-1.616 0-.944.704-1.641 1.8-1.828v3.495l-.2-.05zm1.591 1.872c1.287.323 1.852.859 1.852 1.769 0 1.097-.826 1.828-2.2 1.939V8.73l.348.086z"/>
+</svg>
+</div>
+</div>
+</div>
+<div class="limg w3-center w3-animate-left">
+  <svg xmlns="http://www.w3.org/2000/svg" width="300" height="300" fill="white" class="bi bi-cart2" viewBox="0 0 16 16">
+  <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"/>
+</svg>
+</div>
+<div class="rtext w3-animate-right">
+  <h1 class="t">In need of a button, but not the hefty background colors they bring? Replace the default modifier classes with they
+  Conveying meaning to assistive technologies
+Using color to add meaning only provides a visual indication, which will not be conveyed to users of assistive technologies – such as screen readers. Ensure that information denoted by the color is either obvious from the content itself (e.g. the visible text), or is included through alternative means, such as additional text hidden with the 
+  </h1>
+</div>
+<div class=" w3-center w3-animate-bottom">
+  <div class="container1">
+  <img class="img" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.E4gCagrjAkQ5td5qjSc3rwHaE7%26pid%3DApi&f=1" alt="Snow" style="width:100%;">
+  <div class="centered"><a class="btn btn-primary" href="/owner" role="button">contribute</a>
+</div>
+</div>
 </div>
 {% endblock %}

@@ -1,0 +1,96 @@
+{% extends 'main1.html' %}
+{%  block head %}
+<title>owners home</title>
+{% endblock %}
+{% block body %}
+<style type="text/css" media="all">
+  body {
+    background: #000000;
+  }
+  .rs {
+    width: 90%;
+    background: #343c3e;
+    margin-top: 1%;
+  }
+  .rt {
+    background: #2a3e43;
+    width: 90%;
+  }
+  .rc {
+    background: #1e292c;
+    padding: 3%;
+    margin: 1%;
+    margin-left: 1%;
+    margin-right: 1%;
+    border-radius: 25px;
+    
+  }
+  .ra {
+    font-style: italic;
+    color: white;
+    margin-left: 5%;
+    border-radius: 15px;
+    padding: 1%;
+  }
+  .inp {
+    width: 70%;
+    padding: 1%;
+    margin-left: 5%;
+    border-radius: 15px;
+  }
+  .btn {
+    width: 20%;
+    height: 5%;
+    background: #3965dd;
+    margin-left: 10px;
+    color: white;
+    border-radius:50px;
+  }
+  .inp1 {
+       width: 10%;
+    padding: 1%;
+    margin-left: 2%;
+    border-radius: 15px;
+    
+  }
+  .inpt {
+       padding: 1%;
+    margin-left: 5%;
+    border-radius: 15px;
+    color: #ffffff;
+  }
+  .s {
+    margin-left: 5%;
+  }
+</style>
+<div class="">
+  <div class="">
+    <form action="" method="post" accept-charset="utf-8">
+      {% csrf_token %}
+      <h4 class="inpt">Star</h4>
+            <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="blue" class="bi s bi-star-fill" viewBox="0 0 16 16">
+  <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+</svg>   <input class="inp1" type="tel" name="star" id="star" placeholder="Star" value="" />
+      <br />
+      <h4 class="inpt">comment</h4>
+    <input class="inp" type="text" name="comments" id="" value=""  placeholder="comment"/>
+    <button class="btn" type="submit">comment</button>
+    </form>
+  </div>
+</div>
+{% for i in rate %}
+<div class="">
+  <div class="rc">
+  <div class="rt ra">
+<h1>{{i.comment}}</h1>
+</div>
+<div class="rs ra">
+  <h1>
+       <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="blue" class="bi bi-star-fill" viewBox="0 0 16 16">
+  <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+</svg>   {{i.star}}</h1>
+</div>
+</div>
+</div>
+{% endfor %}
+{% endblock %}

@@ -16,3 +16,9 @@ class Rate (models.Model):
 class cart (models.Model):
   pid = models.IntegerField()
   uid = models.IntegerField()
+class Address (models.Model):
+  uid = models.IntegerField()
+  address = models.CharField(max_length=25000)
+  number = models.IntegerField()
+  name = models.CharField(max_length=250)
+  

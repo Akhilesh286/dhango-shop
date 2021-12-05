@@ -2,7 +2,7 @@ from owner.models import owners , products , orders
 
 import time
 
-from users.models import users , Rate , cart
+from users.models import users , Rate , cart , Address
 def home (request):
   product = products.objects.all()
   data = {
@@ -138,9 +138,34 @@ def cart1 (req,uid):
   }
   return data
 def buy (req,pk):
+  req1 = req.GET
+  print(req1.get('qty'))
   pk = int (pk)
   product = products.objects.get(id=pk)
   data = {
     'products':product
+  }
+  return data
+def address (req,uid):
+  uid = int (uid)
+  if req.method == "POST":
+    name = req.POST['name']
+    address = req.POST['address']
+    number = req.POST['number']
+    new_db = Address (
+      uid = uid ,
+      name = name ,
+      number = number,
+      address = address
+      )
+    new_db.save()
+  Address1 = []
+  address = Address.objects.all()
+  for i in address:
+    if i.uid == uid:
+      address1 = Address.objects.get(uid=i.uid)
+      Address1.append(address1)
+  data = {
+    'address':Address1
   }
   return data

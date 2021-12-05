@@ -1,0 +1,65 @@
+{% extends 'main1.html' %}
+{%  block head %}
+<title>owners home</title>
+{% endblock %}
+{% block body %}
+<style type="text/css" media="all">
+  .ma {
+    margin-top: 10%;
+    margin-right: 25%;
+    margin-left: 25%;
+    background: #ced8da;
+    padding: 10%;
+    border-radius: 15px;
+  }
+  .inp {
+    margin-bottom: 10%;
+    border-radius: 5px;
+  }
+  #address {
+    
+  }
+  #but {
+    background: #2a78d2;
+    color: white;
+    border-radius: 5px;
+    padding: 2%;
+  }
+  body {
+    background: #191919;
+  }
+  .t {
+    margin-left: 25%;
+  }
+  .t1 {
+    margin-left: 34%;
+    margin-top: 5%;
+  }
+</style>
+  <div class="">
+    <img class="" src="https://mdbootstrap.com/img/Photos/new-templates/bootstrap-login-form/draw2.png" alt="" />
+  </div>
+<h1 class="text-light t1">Addresses</h1>
+<div class="container">
+{% for i in address %}
+<div class="ma">
+  <h1>Name : {{i.name}}</h1>
+  <h1>number : {{i.number}}</h1>
+  <h1>address : {{i.address}}</h1>
+</div>
+{% endfor %}
+<br />
+<h1 class="text-light t">Add new Address</h1>
+  <div class="ma">
+    <form action="" method="post" accept-charset="utf-8">
+      {% csrf_token %} 
+      <input class="inp" type="text" name="address" id="address" value="" placeholder="address" />
+      <input placeholder="number" class="inp" type="number" name="number" id="number" value="" />
+     
+      <input placeholder="name" class="inp" type="text" name="name" id="name" value="" />
+    <button id="but" type="submit">submit</button>
+    </form>
+  </div>
+  
+</div>
+{% endblock %}

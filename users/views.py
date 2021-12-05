@@ -12,7 +12,6 @@ def home (request):
 
 def cart (request,uid):
   data = user.cart1(request,uid)
-  print (data)
   return render (request,'cart.html',data)
 
 def login (request):
@@ -46,5 +45,10 @@ def addcart (request,uid,pid):
     return redirect(f'/home/{uid}')
 def buy (request,pk):
   data = user.buy (request,pk)
-  print (data)
   return render (request,'buy.html',data)
+def address (request,uid):
+  data = user.address(request,uid)
+  return render (request,'address.html',data)
+  
+def favourite (request,uid):
+  return render (request,'favourite.html')

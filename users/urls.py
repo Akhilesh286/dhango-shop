@@ -10,5 +10,7 @@ urlpatterns = [
   ,path ('rate/<str:pk>/',views.rate)
   ,path ('contribute/', views.contribute),
   path ('addcart/<str:uid>/<str:pid>/',views.addcart),
+  path ('address/<str:uid>/',views.address),
+  path ('favourite/<str:uid>/',views.favourite),
   path ('buy/<str:pk>/',views.buy),
   ]

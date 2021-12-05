@@ -8,9 +8,13 @@
     background: #000000;
     color: #ffffff;
     border-radius: 50px;
+    margin-left: 2%;
   }
   .ad {
     margin-top: 5%;
+  }
+  .addr {
+    margin: 5%;
   }
 </style>
 <div class="container">
@@ -25,7 +29,10 @@
 </div>
 
 </div>
+  <form class="" action="" method="post" accept-charset="utf-8">
+{% csrf_token %}
 <div class="cbody" style="height:50%;">
+
   <div class="card-body">
     <h5 class="card-title">name:{{i.name}}</h5>
     <h4 class="card-text">
@@ -38,21 +45,26 @@
        <option value="2">2</option> 
        <option value="3">3</option>
        <option value="4">4</option>
-       opt+
       </select>
     </div>
-    <div class="ad">
-      <input type="radio" name="address" id="address" />
-      <label for="address">Aji</label>
-      <br />
-           <input type="radio" name="address" id="address" />
-      <label for="address">Aji</label>
-      <br />
-      <input type="radio" name="address" id="address" />
-      <label for="address">Aji</label>
-      <br />
-    </div>
+    <input type="number" name="pk" id="pk" value="{{i.id}}" hidden/>
+{% for j in address %}
+<div class="addr">
+  <input type="text" name="price" id="price" value="{{i.price}}" hidden/>
+ <input type="radio" name="addr" id="" value="{{j.id}}" />
+ <label for="{{j.name}}">{{j.name}}</label>
+<label for="">
+  <div class="">
   </div>
+</label>
+<br />
+</div>
+{% endfor %}
+<div class="bt text-center">
+  <button class="btn btn-info " type="submit">hello</button>
+</div>
+  </div>
+</form>
 </div>
 </div>
   </div>

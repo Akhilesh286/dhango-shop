@@ -2,7 +2,7 @@ from owner.models import owners , products , orders
 
 import time
 
-from users.models import users , Rate , cart , Address
+from users.models import users , Rate , cart , Address , Favourite
 def home (request):
   product = products.objects.all()
   data = {
@@ -81,6 +81,15 @@ def uname (req):
     uid = uname1.id
     return uid
 def homep (req,pk):
+  if req.method == 'POST':
+    uid = req.POST ['uid']
+    pid = req.POST['pid']
+    print (uid)
+    new_db = Favourite (
+      uid = uid ,
+      pid = pid
+      )
+    new_db.save()
   product = products.objects.all()
   data = {
    'products':product,
@@ -121,6 +130,11 @@ def acart (req,uid,pid):
   new_db.save()
   return True
 def cart1 (req,uid):
+  addr1 = ''
+  price = ''
+  qty = ''
+  pk = ''
+  tf = False
   uid = int(uid)
   carts =  cart.objects.all()
   cartS = []
@@ -133,19 +147,49 @@ def cart1 (req,uid):
   for i in cartS :
     product = products.objects.get (id=i.pid)
     product1.append(product)
+  address = Address.objects.all()
+  address3 = []
+  for i in address:
+    if i.uid == uid :
+      address2 = Address.objects.get(id=i.id)
+      address3.append(address2)
+  if req.method == 'POST':
+    addr = req.POST['addr']
+    qty = req.POST['qty']
+    price = req.POST['price']
+    pk = req.POST['pk']
+    qty = float (qty)
+    price = float (price)
+    tf = True
+    addr1 = addr
+    price = price
+    qty = qty
+    pk = pk
+  
   data = {
     'products':product1,
+    'address':address3,
+    'addr':addr1,
+    'price':price,
+    'qty':qty,
+    'pk':pk,
+    'tf':tf
   }
   return data
-def buy (req,pk):
-  req1 = req.GET
-  print(req1.get('qty'))
+def buy (req,addr,price,qty,pk):
+  address = Address.objects.get(id=addr)
   pk = int (pk)
+  qty = float (qty)
+  price = float (price)
+  price1 = price*qty
   product = products.objects.get(id=pk)
   data = {
-    'products':product
+    'price':price,
+    'address':address,
+    'product':product
   }
   return data
+  
 def address (req,uid):
   uid = int (uid)
   if req.method == "POST":
@@ -163,9 +207,22 @@ def address (req,uid):
   address = Address.objects.all()
   for i in address:
     if i.uid == uid:
-      address1 = Address.objects.get(uid=i.uid)
+      address1 = Address.objects.get(id=i.id)
       Address1.append(address1)
   data = {
     'address':Address1
+  }
+  return data
+
+def favourite (req,uid):
+  uid = int (uid)
+  favourite = Favourite.objects.all()
+  products = []
+  for i in favourite:
+    if i.uid == uid:
+      product = Favourite.objects.get (id =i.id)
+      products.append(product)
+  data = {
+    'products':products
   }
   return data

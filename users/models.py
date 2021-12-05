@@ -21,4 +21,7 @@ class Address (models.Model):
   address = models.CharField(max_length=25000)
   number = models.IntegerField()
   name = models.CharField(max_length=250)
+class Favourite (models.Model):
+  uid = models.IntegerField()
+  pid = models.IntegerField()
   

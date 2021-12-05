@@ -16,15 +16,20 @@
 </style>
 <div class="container">
   <div class="m text-center">
-    <img class="img" src="{{products.image}}" alt="" />
-    <h1>name : {{products.name}}</h1>
-    <h1>price : {{products.price}}</h1>
+    <img class="img" src="{{product.image}}" alt="" />
+    <h1>name : {{product.name}}</h1>
+    <h1>price : {{price}}</h1>
+    <h1 class="text-light">address</h1>
+    <h3>name : {{address.name}}</h3>
+    <h3>number : {{address.number}}</h3>
+    <h3>address : </h3>
+    <h4>{{address.address}}</h4>
+    <form action="" method="post" accept-charset="utf-8">
+      {% csrf_token %} 
+    <button class="btn btn-success" type="submit">hello</button>
+    </form>
   </div>
-  <h1 id="demo"></h1>
 </div>
 <script type="text/javascript" charset="utf-8">
-  function h(){
-    alert ('hello')
-  }
 </script>
 {% endblock %}

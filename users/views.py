@@ -12,6 +12,13 @@ def home (request):
 
 def cart (request,uid):
   data = user.cart1(request,uid)
+  addr = data.get('addr')
+  price = data.get('price')
+  qty = data.get ('qty')
+  pk = data.get ('pk')
+  tf = data.get ('tf')
+  if tf == True :
+    return redirect (f'/buy/{addr}/{price}/{qty}/{pk}/')
   return render (request,'cart.html',data)
 
 def login (request):
@@ -43,12 +50,13 @@ def addcart (request,uid,pid):
   acart = user.acart(request,uid,pid)
   if acart == True :
     return redirect(f'/home/{uid}')
-def buy (request,pk):
-  data = user.buy (request,pk)
+def buy (request,addr,price,qty,pk):
+  data = user.buy (request,addr,price,qty,pk)
   return render (request,'buy.html',data)
 def address (request,uid):
   data = user.address(request,uid)
   return render (request,'address.html',data)
   
 def favourite (request,uid):
-  return render (request,'favourite.html')
+  data = user.favourite(request,uid)
+  return render (request,'favourite.html',data)

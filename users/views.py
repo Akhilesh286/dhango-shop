@@ -17,8 +17,9 @@ def cart (request,uid):
   qty = data.get ('qty')
   pk = data.get ('pk')
   tf = data.get ('tf')
+  
   if tf == True :
-    return redirect (f'/buy/{addr}/{price}/{qty}/{pk}/')
+    return redirect (f'/buy/{addr}/{price}/{qty}/{pk}/{uid}/')
   return render (request,'cart.html',data)
 
 def login (request):
@@ -50,8 +51,8 @@ def addcart (request,uid,pid):
   acart = user.acart(request,uid,pid)
   if acart == True :
     return redirect(f'/home/{uid}')
-def buy (request,addr,price,qty,pk):
-  data = user.buy (request,addr,price,qty,pk)
+def buy (request,addr,price,qty,pk,uid):
+  data = user.buy (request,addr,price,qty,pk,uid)
   return render (request,'buy.html',data)
 def address (request,uid):
   data = user.address(request,uid)

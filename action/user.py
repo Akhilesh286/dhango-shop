@@ -173,10 +173,21 @@ def cart1 (req,uid):
     'price':price,
     'qty':qty,
     'pk':pk,
-    'tf':tf
+    'tf':tf,
   }
   return data
-def buy (req,addr,price,qty,pk):
+def buy (req,addr,price,qty,pk,uid):
+  if req.method == "POST":
+    addr = req.POST['addr']
+    pid = req.POST['pid']
+    to = products.objects.get(id=pid)
+    
+    new_db = orders (
+      to = to.owner_name ,
+      From = uid ,
+      data = addr
+      )
+    new_db.save()
   address = Address.objects.get(id=addr)
   pk = int (pk)
   qty = float (qty)

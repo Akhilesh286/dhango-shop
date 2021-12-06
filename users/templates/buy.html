@@ -7,14 +7,26 @@
   .m {
     background: #63b3c6;
     border-radius: 15px;
+    margin-bottom: 50%;
   }
   .img {
     width: 30rem;
     height: 30rem;
   }
+  .im {
+    width: 100%;
+    margin-bottom: 10%;
+    margin-top: 10%;
+  }
+  body {
+    background: #1a1e1f;
+  }
   
 </style>
 <div class="container">
+  <div class="im">
+    <img class="im"src="https://wallpapercave.com/wp/wp6193344.jpg" alt="" />
+  </div>
   <div class="m text-center">
     <img class="img" src="{{product.image}}" alt="" />
     <h1>name : {{product.name}}</h1>
@@ -26,6 +38,8 @@
     <h4>{{address.address}}</h4>
     <form action="" method="post" accept-charset="utf-8">
       {% csrf_token %} 
+      <input type="text" name="addr" id="addr" value="{{address.id}}" hidden/>
+          <input type="text" name="pid" id="pid" value="{{product.id}}" hidden/>
     <button class="btn btn-success" type="submit">hello</button>
     </form>
   </div>

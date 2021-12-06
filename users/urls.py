@@ -12,5 +12,6 @@ urlpatterns = [
   path ('addcart/<str:uid>/<str:pid>/',views.addcart),
   path ('address/<str:uid>/',views.address),
   path ('favourite/<str:uid>/',views.favourite),
-  path ('buy/<str:addr>/<str:price>/<str:qty>/<str:pk>/',views.buy),
+  path ('buy/<str:addr>/<str:price>/<str:qty>/<str:pk>/<str:uid>/',views.buy),
+  
   ]

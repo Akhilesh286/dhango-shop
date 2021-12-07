@@ -25,6 +25,7 @@ class orders (models.Model):
   From = models.CharField(max_length=250)
   to = models.CharField(max_length=250)
   data = models.CharField(max_length=50)
+  pid = models.IntegerField()
   
   
   

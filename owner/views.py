@@ -87,7 +87,7 @@ def update (request,pk,name):
 def ohome (request,name):
   data = home.ohome(request,name)
   return render (request,'ohome.html',data)
-def orders (request,name , toname):
+def orders (request,name,toname):
   data = home.orderz(request,name,toname)
   return render (request,'orders.html',data)
 def contact (request,name):

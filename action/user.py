@@ -189,7 +189,8 @@ def buy (req,addr,price,qty,pk,uid):
     new_db = orders (
       to = to.owner_name ,
       From = uid ,
-      data = addr
+      data = addr,
+      pid = pid
       )
     new_db.save()
   address = Address.objects.get(id=addr)

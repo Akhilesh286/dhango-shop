@@ -262,22 +262,15 @@ def ohome (request,name):
   return data
   #-----------end colou
 def orderz (request,name,toname):
-  if request.method == "POST":
-    new_db = orders (
-      From = name,
-      data = request.POST['data'],
-      to = toname
-      )
-    new_db.save()
-  From = []
   order = orders.objects.all()
+  produ = []
   for i in order :
-    if i.to == name:
-      From1 = orders.objects.get (id=i.id)
-      From.append(From1)
+    if i.From == name:
+      prod = products.objects.get(id=i.data)
+      produ.append(prod)
     
   data = {
-    'orders':order,'name': name,'image':'https://wallpapers.com/images/high/splashing-water-gradient-background-mobile-v5hlk4ta55rn5w3x.jpg'
+    'orders':order,'product':produ,'name': name,'image':'https://wallpapers.com/images/high/splashing-water-gradient-background-mobile-v5hlk4ta55rn5w3x.jpg'
   }
   return data
 def contact (request,name):

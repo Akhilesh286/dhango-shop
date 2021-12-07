@@ -90,10 +90,14 @@ def homep (req,pk):
       pid = pid
       )
     new_db.save()
+  fav = Favourite.objects.all()
+  
   product = products.objects.all()
+  carts = cart.objects.all()
   data = {
    'products':product,
    'uid':pk,
+   'fav':fav,
   }
   return data
 def rate (req,pk):

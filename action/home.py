@@ -1,5 +1,5 @@
 from owner.models import owners , products  , orders
-
+from users.models import Address
 def color (request) :
   req = request.GET
   
@@ -264,13 +264,14 @@ def ohome (request,name):
 def orderz (request,name,toname):
   order = orders.objects.all()
   produ = []
+  address = ''
   for i in order :
     if i.From == name:
-      prod = products.objects.get(id=i.data)
+      address = Address.objects.get(id=i.data)
+      prod = products.objects.get(id=i.pid)
       produ.append(prod)
-    
   data = {
-    'orders':order,'product':produ,'name': name,'image':'https://wallpapers.com/images/high/splashing-water-gradient-background-mobile-v5hlk4ta55rn5w3x.jpg'
+    'orders':order,'address':address,'product':produ,'name': name,'image':'https://wallpapers.com/images/high/splashing-water-gradient-background-mobile-v5hlk4ta55rn5w3x.jpg'
   }
   return data
 def contact (request,name):

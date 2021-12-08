@@ -29,8 +29,10 @@
       {% for i in product %}
   <div class="card mb-5" style="width: 40rem;">
   <div class="card-body">
-    <h5 class="card-title">{{i.name}}</h5>
-    <h6 class="card-subtitle mb-2 text-muted">{{i.jk}}</h6>
+    <h3 class="card-title">productName :    {{i.name}}</h3>
+    <h4 class="card-subtitle mb-2 text-muted">Name :   {{address.name}}</h4>
+    <h4>Number : {{address.number}}</h4>
+    <h5>address : <br />{{address.address}}</h5>
 </div>
 </div>
 {% endfor %}

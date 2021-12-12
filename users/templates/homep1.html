@@ -99,16 +99,12 @@
 {% for j in fav %}
 {% if j.pid == i.id %}
   <div class="top-right">
-    <form action="" method="post" accept-charset="utf-8">
-      {% csrf_token %} 
-      <input type="text" name="pid" id="fav" value="{{i.id}}" hidden />
-      <input type="text" name="uid" id="uid" value="{{uid}}" hidden />
     <button class="btn btu " type="submit">
 <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#00ffff" class="bi bi-heart-fill" viewBox="0 0 16 16">
   <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
 </svg>
 </button>
-    </form>
+ 
 </div>
 {% else %}
   <div class="top-right">

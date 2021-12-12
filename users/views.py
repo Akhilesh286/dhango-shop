@@ -53,6 +53,9 @@ def addcart (request,uid,pid):
     return redirect(f'/home/{uid}')
 def buy (request,addr,price,qty,pk,uid):
   data = user.buy (request,addr,price,qty,pk,uid)
+  tr = data.get('tr')
+  if tr == True :
+    return redirect (f'/home/{uid}')
   return render (request,'buy.html',data)
 def address (request,uid):
   data = user.address(request,uid)

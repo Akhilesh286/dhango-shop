@@ -53,10 +53,10 @@
   <div class="ma">
     <form action="" method="post" accept-charset="utf-8">
       {% csrf_token %} 
-      <input class="inp" type="text" name="address" id="address" value="" placeholder="address" />
-      <input placeholder="number" class="inp" type="number" name="number" id="number" value="" />
+      <input class="inp" type="text" name="address" id="address" value="" placeholder="address" required=""/>
+      <input placeholder="number" class="inp" type="number" name="number" id="number" value="" required="" />
      
-      <input placeholder="name" class="inp" type="text" name="name" id="name" value="" />
+      <input placeholder="name" class="inp" type="text" name="name" id="name" required="" value="" />
     <button id="but" type="submit">submit</button>
     </form>
   </div>

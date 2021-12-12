@@ -91,9 +91,9 @@ def homep (req,pk):
       )
     new_db.save()
   fav = Favourite.objects.all()
-  
   product = products.objects.all()
   carts = cart.objects.all()
+  print (fav)
   data = {
    'products':product,
    'uid':pk,
@@ -169,7 +169,6 @@ def cart1 (req,uid):
     price = price
     qty = qty
     pk = pk
-  
   data = {
     'products':product1,
     'address':address3,
@@ -181,6 +180,7 @@ def cart1 (req,uid):
   }
   return data
 def buy (req,addr,price,qty,pk,uid):
+  tr = False
   if req.method == "POST":
     addr = req.POST['addr']
     pid = req.POST['pid']
@@ -193,6 +193,7 @@ def buy (req,addr,price,qty,pk,uid):
       pid = pid
       )
     new_db.save()
+    tr = True
   address = Address.objects.get(id=addr)
   pk = int (pk)
   qty = float (qty)
@@ -200,7 +201,8 @@ def buy (req,addr,price,qty,pk,uid):
   price1 = price*qty
   product = products.objects.get(id=pk)
   data = {
-    'price':price,
+    'tr':tr,
+    'price':price1,
     'address':address,
     'product':product
   }

@@ -51,7 +51,7 @@
     </h4>
     </div>
     <div class="">
-      <select name="qty" id="qty">
+      <select  name="qty" id="qty">
         <option value="1">Qty 1</option>
        <option value="2">2</option> 
        <option value="3">3</option>
@@ -62,7 +62,7 @@
 {% for j in address %}
 <div class="addr">
   <input type="text" name="price" id="price" value="{{i.price}}" hidden/>
- <input type="radio" name="addr" id="" value="{{j.id}}" />
+ <input required="" type="radio" name="addr" id="" value="{{j.id}}" />
 <label for="">
 
   <div class="">

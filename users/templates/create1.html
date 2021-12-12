@@ -15,7 +15,7 @@
             <form action="" method="post" accept-charset="utf-8">
               {% csrf_token %} 
               <div class="form-outline mb-4">
-                <input placeholder="Name" type="text" id="name" class="form-control" 
+                <input required="" placeholder="Name" type="text" id="name" class="form-control" 
                 name="name"
                 />
                 <label class="form-label" for="form3Example1q">Name</label>
@@ -27,6 +27,7 @@
                   <div class="form-outline datepicker">
                     
                     <input
+required=""
 name="date"
                     type="date"
                     class="form-control"
@@ -44,19 +45,19 @@ name="date"
               </div>
 
  <div class="form-check">
-  <input value="female" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+  <input required="" value="female" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
   <label class="form-check-label" for="flexRadioDefault1">
     female
   </label>
 </div>
 <div class="form-check">
-  <input value="male" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+  <input required="" value="male" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
   <label class="form-check-label" for="flexRadioDefault2">
     male
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="radio" name="flexRadioDefault"
+  <input required="" class="form-check-input" type="radio" name="flexRadioDefault"
   value="other"
   id="flexRadioDefault2" checked>
   <label class="form-check-label" for="flexRadioDefault2">
@@ -66,21 +67,21 @@ name="date"
                 <div class="col-md-6">
 
                   <div class="form-outline">
-                    <input 
+                    <input required=""
                     placeholder="password"
                     name="password"
                     type="password" id="password" class="form-control" />
                     <label class="form-label" for="form3Example1w">password</label>
                   </div>
        <div class="form-outline">
-                    <input 
+                    <input  required=""
                     placeholder="email"
                     name="email"
                     type="email" id="email" class="form-control" />
                     <label class="form-label" for="form3Example1w">email</label>
                   </div>
        <div class="form-outline">
-                    <input 
+                    <input required=""
                     placeholder="phone number"
                     name="number"
                     type="number" id="phone" class="form-control" />

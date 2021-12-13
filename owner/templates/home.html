@@ -86,23 +86,42 @@
        <td>{{product.discount}}</td>
        <td>{{product.star}}</td>
   
-  <td><img src="https://wallpapercave.com/wp/44P5llm.jpg" alt="" class="imag" /></td>
+  <td>
+    <a style="font-style: italic;
+   text-decoration: none;color:black;" href="{{product.image}}">
+    <img src="{{product.image}}" alt="no image" class="imag" />
+    </a>
+    </td>
    <td>
+     <a style="font-style: italic;
+   text-decoration: none;color:black;"  href="{{product.image2}}">
      <img class="imag" src="{{product.image2}}" alt="no image" />
+     </a>
      </td>
-    <td>  <img class="imag" src="{{product.image3}}" alt="no image" /></td> 
     <td>
+      <a style="font-style: italic;
+   text-decoration: none;color:black;"  href="{{product.image3}}">
+        <img class="imag" src="{{product.image3}}" alt="no image" />
+    </a>
+    </td> 
+    <td>
+      <a style="font-style: italic;
+   text-decoration: none;color:black;"  href="{{product.image4}}">
         <img class="imag" src="{{product.image4}}" alt="no image" />
+        </a>
         </td> 
         <td>
+          <a style="font-style: italic;
+   text-decoration: none;color:black;"  href="{{product.image5}}">
             <img class="imag" src="{{product.image5}}" alt="no image" />
+            </a>
         </td>
         <td>
-          <video width="400" controls>
-  <source src="mov_bbb.mp4" type="video/mp4">
-  <source src="mov_bbb.ogg" type="video/ogg">
-  Your browser does not support HTML video.
+                    <a style="font-style: italic;
+   text-decoration: none;color:black;"  href="{{product.video}}">
+          <video width="80" src="{{product.video}}">
 </video>
+</a>
         </td>
        <td class="td1">
              <span class="a1 close button"><a style="text-decoration: none; color: black;" href="/owner/delete/{{product.id}}/p/{{oname}}">delete</a></span></li>
@@ -117,54 +136,7 @@
  
         {% endfor %}
 </table>
-<h1 class="text">images and discription</h1>
-<div>
-  <table class="table" border="0">
-    
-    
-     <thead class="mt-5 thead-dark head1">
-       <tr>
-      <th scope="col">#</th>
-      <th scope="col">name</th>
-      <th scope="col">video</th>
-      <th scope="col">logo</th>
-      <th scope="col">discription</th>
-      <th scope="col">image1</th>
-         <th scope="col">image2</th>
-         <th scope="col">image3</th>
-         <th scope="col">image4</th>
-      
-      <th scope="col">delete</th>
-      <th scope="col"> Update</th>
-    </tr> 
-  </thead>
-  {% for product in allProducts %}
-  
-  <tbody class="body1">
-      <tr>
 
-      <th scope="row">{{product.id}}</th>
-      <td>{{product.name}}</td>
-      <td>{{product.video}}</td>
-       
-       <td>{{product.image}}</td>
-       <td>{{product.discription}}</td>
-       <td>{{product.image2}}</td>
-       <td>{{product.image3}}</td>
-       <td>{{product.image4}}</td>
-       <td>{{product.image5}}</td>
-       <td class="td1">
-             <span class="a1 close button"><a style="text-decoration: none; color: black;" href="/owner/delete/{{product.id}}/p/{{oname}}">delete</a></span></li>
-  </td>
-  <td>
-             <span class="a1 close button"><a style="text-decoration: none; color: black;" href="/owner/update/{{product.id}}/{{oname}}">Update</a></span></li>
-      </td>
-       </td>
-    </tr>  
-  </tbody>
-  {% endfor %}
-  </table>
-</div>
 </div>
 <div>
 </div>

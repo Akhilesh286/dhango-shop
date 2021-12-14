@@ -20,9 +20,11 @@
 </div>
 <div class="input-group mb-3 inp1">
   <span class="input-group-text" id="basic-addon1">Stock</span>
-  <input required="" type="text" name="stock" class="form-control" placeholder="Stock" aria-label="Username" aria-describedby="basic-addon1"
-  value="{{i.stock}}"
-  >
+  <select class="form-select" size="3" aria-label="size 3 select example" name="stock">
+  
+  <option value="0">No available</option>
+  <option value="1">available</option>
+</select>
 </div>
 <div class="input-group mb-3 inp1">
   <span class="input-group-text" id="basic-addon1">discount</span>
@@ -60,18 +62,7 @@
   value="{{i.image3}}"
   type="text" class="form-control" name="image3" placeholder="image 2" aria-label="Username" aria-describedby="addon-wrapping">
 </div>
-<div class="input-group mt-3 inp flex-nowrap">
-  <span class="input-group-text" id="addon-wrapping">image</span>
-  <input required="" type="text" name="image4" class="form-control" placeholder="image 3" aria-label="Username" aria-describedby="addon-wrapping"
-  value="{{i.image4}}"
-  >
-</div>
-<div class="input-group mt-3 inp flex-nowrap">
-  <span class="input-group-text" id="addon-wrapping">image</span>
-  <input required="" type="text" name="image5" class="form-control" placeholder="image 4" aria-label="Username" aria-describedby="addon-wrapping"
-  value="{{i.image5}}"
-  >
-</div>
+
 <div class="input-group mt-3 inp flex-nowrap">
   <span class="input-group-text" id="addon-wrapping">video</span>
   <input required="" type="text" name="video" class="form-control" placeholder="video" aria-label="Username" aria-describedby="addon-wrapping"

@@ -74,6 +74,7 @@ def db (request,Name_check):
     name = request.POST['Name']
     email = request.POST['email'] 
     password = request.POST['password']
+    phone = request.POST['phone']
     if name == "":
       name = False
     elif password == "":
@@ -86,6 +87,7 @@ def db (request,Name_check):
         name = request.POST['Name'],
         email = request.POST['email'], 
         password = request.POST['password'],
+        phone = request.POST['phone']
            )
         new_db.save()
         datab = True
@@ -171,8 +173,6 @@ def add (request,o_name):
       image = request.POST['logo'],
       image2 = request.POST['image2'],
       image3 = request.POST['image3'],
-      image4 = request.POST['image4'],
-      image5 = request.POST['image5'],
       stock = request.POST['stock'],
       video = request.POST['video'],
       star = request.POST['star'],
@@ -201,8 +201,6 @@ def update (request,pk,o_name):
       image = request.POST['logo'],
       image2 = request.POST['image2'],
       image3 = request.POST['image3'],
-      image4 = request.POST['image4'],
-      image5 = request.POST['image5'],
       stock = request.POST['stock'],
       video = request.POST['video'],
       star = request.POST['star'],

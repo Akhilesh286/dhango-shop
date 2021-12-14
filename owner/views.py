@@ -21,13 +21,18 @@ def index (request):
 def delete (request,pk,a_p,name):
   if a_p == "p":
     product=  products.objects.get (id=pk)
-    product.delete()
-    return redirect (f'/owner/homep/True/{name}')
-  if a_p == 'a':
-    owner = owners.objects.get (id=pk)
-  
-    owner.delete()
-    return redirect ('/owner/admin')
+    pname = product.name
+    data = {
+      'pname' : pname
+    }
+    if(request.method=="POST"):
+      btn = request.POST['btn1']
+      if btn == '0':
+        return redirect (f'/owner/homep/True/{name}/')
+      else :
+        product.delete()
+        return redirect (f'/owner/homep/True/{name}/')
+  return render (request,'del.html',data)
 
 def admin (request):
   owner=owners.objects.all()
@@ -69,7 +74,7 @@ def add (request,o_name):
   data = home.add(request,o_name)
   t_f = data.get('t_f')
   if t_f == True:
-    return redirect (f'owner/homep/True/{o_name}')
+    return redirect (f'/owner/homep/True/{o_name}')
   print(data)
   return render (request,'add.html',data)
   

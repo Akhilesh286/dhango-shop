@@ -2,6 +2,7 @@ from django.db import models
 
 class owners (models.Model):
   name = models.CharField(max_length=255)
+  phone = models.IntegerField()
   password = models.CharField(max_length=10)
   email = models.CharField(max_length=100)
   
@@ -18,8 +19,6 @@ class products (models.Model):
   discount = models.FloatField()
   image2 = models.CharField(max_length=2555)
   image3 = models.CharField(max_length=2555)
-  image4 = models.CharField(max_length=2555)
-  image5 = models.CharField(max_length=2555)
   
 class orders (models.Model):
   From = models.CharField(max_length=250)

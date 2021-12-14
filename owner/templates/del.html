@@ -1,0 +1,28 @@
+{% extends 'main.html' %}
+{%  block head %}
+<title>{{oname}}</title>
+{% endblock %}
+{% block body %}
+<style type="text/css" media="all">
+  body {
+    background: #000000;
+    color: #dbe1e3;
+  }
+</style>
+<div class="container">
+  <h1 class="mt-5">You want to delete the product </h1>
+  <h1 style="font-style:italic;" class="text-info"><strong>{{pname}}</strong></h1>
+  <img src="https://www.pixelstalk.net/wp-content/uploads/2016/10/Delete-Wallpapers-HD-768x432.jpg" alt="" />
+  <form action="" method="post" accept-charset="utf-8">
+     {% csrf_token %}
+    <div style="width:100%;" class="row">
+    <button value="0" name="btn1" type="submit" class="btn btn-outline-warning ml-5" data-mdb-ripple-color="dark" style="width:45%;">
+  Back
+</button>
+  <button value="1" name="btn1" style="width:45%; margin-left:5%;" type="submit" class="btn btn-outline-danger" data-mdb-ripple-color="dark">
+  Delete
+</button>
+</div>
+</form>
+</div>
+{% endblock %}

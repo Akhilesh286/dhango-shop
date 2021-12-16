@@ -8,6 +8,27 @@
     <title></title>
   </head>
   <body>
+    <style type="text/css" media="all">
+      .tabl {
+        margin-top: 5%;
+        width: 90%;
+        margin-left: 5%;
+      }
+      .txt {
+        text-align: center;
+        font-style: italic;
+        
+      }
+      .im {
+        height: 5rem;
+        border-radius:5px;
+      }
+    </style>
+   
+    <div class="">
+    <div class="row">
+      <h1 class="txt">owners</h1>
+    <div class="tabl">
 <table class="table table-striped" >
   <thead>
     <tr>
@@ -18,25 +39,79 @@
     </tr>
   </thead>
   <tbody>
+      {% for i in owners %}
     <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
+      <th scope="row">{{i.id}}</th>
+      <td>{{i.name}}</td>
+      <td>{{i.email}}</td>
+      <td>{{i.phone}}</td>
     </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td colspan="2">Larry the Bird</td>
-      <td>@twitter</td>
-    </tr>
+    {% endfor %}
   </tbody>
 </table>
+
+</div>
+</div>
+</div>
+ <div class="">
+    <div class="row">
+      <h1 class="txt">users</h1>
+    <div class="tabl">
+<table class="table table-striped" >
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">name</th>
+      <th scope="col">email</th>
+      <th scope="col">phone</th>
+    </tr>
+  </thead>
+  <tbody>
+      {% for i in user %}
+    <tr>
+      <th scope="row">{{i.id}}</th>
+      <td>{{i.name}}</td>
+      <td>{{i.email}}</td>
+      <td>{{i.phone}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+</div>
+</div>
+</div>
+ <div class="">
+    <div class="row">
+      <h1 class="txt">products</h1>
+    <div class="tabl">
+<table class="table table-striped" >
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">name</th>
+      <th scope="col">price</th>
+      <th scope="col">logo</th>
+      <th scope="col">srar</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+      {% for i in product %}
+    <tr>
+      <th scope="row">{{i.id}}</th>
+      <td>{{i.name}}</td>
+      <td>{{i.price}}</td>
+      <td><img class="im" src="{{i.image}}" alt="" /></td>
+      <td>{{i.star}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+</div>
+</div>
+</div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 

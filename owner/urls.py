@@ -3,7 +3,7 @@ from . import views
 
 urlpatterns = [
     path('',views.index ,name = 'index' ),
-    path('admin/',views.admin ,name = 'admin' ),
+    path('admin/',views.admin1 ,name = 'admin' ),
     path ('update/<str:pk>/<str:name>/', views.update),
     
     

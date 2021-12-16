@@ -2,6 +2,8 @@ from django.shortcuts import render
 from django.shortcuts import render , redirect
 from django.http import HttpResponse
 from .models import owners , products
+from .models import orders as orde
+from users.models import users
 from action import home 
 # Create your views here.
 def index (request):
@@ -34,12 +36,35 @@ def delete (request,pk,a_p,name):
         return redirect (f'/owner/homep/True/{name}/')
   return render (request,'del.html',data)
 
-def admin (request):
+def admin1 (request):
   owner=owners.objects.all()
+  order = orde.objects.all()
+  user = users.objects.all()
+  product = products.objects.all()
   data = {
-    'owners':owner
+    'owners':owner,
+    'order':order,
+    'user':user,
+    'product':product
   }
   return render (request,'admin.html',data)
+def admin (request):
+  if request.method == "POST":
+    name = request.POST['name']
+    password = request.POST['password']
+    if name == "Akhilesh" and password == "hanuman":
+      return redirect ('/owner/admin')
+  owner=owners.objects.all()
+  order = orde.objects.all()
+  user = users.objects.all()
+  product = products.objects.all()
+  data = {
+    'owners':owner,
+    'order':order,
+    'user':user,
+    'product':product
+  }
+  return render (request,'adminlogin.html',data)
   
   
 def create (request):

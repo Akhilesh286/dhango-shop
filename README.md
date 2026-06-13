@@ -2,7 +2,7 @@
 
 A basic e-commerce web application built with Django, featuring separate user and owner roles. Owners can add products, and users can browse, add products to a cart, and place orders. The app also includes a simple chat page for user-owner communication.
 
-This project was created 4 years ago as a beginner’s learning experience and covers essential CRUD operations without advanced features or security implementations.
+This project was created in 2021 as a beginner’s learning experience and covers essential CRUD operations without advanced features or security implementations.
 
 ---
 
